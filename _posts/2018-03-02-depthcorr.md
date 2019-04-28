@@ -1,0 +1,11 @@
+---
+layout: post
+title: 360 Depth Correction (draft)
+subtitle: depth correction for virtual objects enclosed by 360 video
+image: /img/vr-headset.jpg
+---
+
+In virtual reality, when a 360 monocular video canvas surrounds virtual objects, there will be depth mismatch that creates artifacts. In this scenario, monocular depth cues provided by the canvas will override binocular depth cues on the virtual object. I propose an algorithm to geometrically transform the virtual object in order to compensate for the mismatch. This allows natural fusion of virtual objects and 360 environments in virtual reality. 
+
+<object data="https://raw.githubusercontent.com/liujch1998/Lab/master/vr-360-depth-correction/report/report.pdf" width="720" height="720" type='application/pdf' />
+
