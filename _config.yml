@@ -1,1 +1,24 @@
-theme: jekyll-theme-cayman
+title: LJC's Home
+author: Liu Jiacheng (Gary)
+email: liujch1998@gmail.com
+description: >
+  This is my home page. I will write blogs on my research and projects, 
+  encompassing artificial intelligence, natural language processing, 
+  virtual reality, and competitive programming, as well as my life and hobbies. 
+
+google_analytics: UA-139146855-1
+
+show_excerpts: true
+
+minima:
+  social_links:
+    facebook: liujch1998
+    linkedin: liujch1998
+    github: liujch1998
+
+header_pages:
+  - about.md
+  - projects.md
+  - resume-cv.md
+
+theme: minima
