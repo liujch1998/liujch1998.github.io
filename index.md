@@ -1,4 +1,4 @@
 ---
 layout: home
-title: LJC
+title: Home
 ---

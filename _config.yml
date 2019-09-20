@@ -1,4 +1,4 @@
-title: LJC's Home
+title: Liu Jiacheng (Gary)
 author: Liu Jiacheng (Gary)
 email: liujch1998@gmail.com
 description: >
@@ -19,6 +19,6 @@ minima:
 header_pages:
   - about.md
   - projects.md
-  - resume-cv.md
+  - cv.md
 
 theme: minima
