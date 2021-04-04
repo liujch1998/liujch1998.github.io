@@ -11,6 +11,8 @@ My research interests are reasoning, knowledge representation, and generation.
 Previously, I received B.S. in Computer Science from University of Illinois at Urbana-Champaign.
 I used to work in Facebook's Natural Language Generation (NLG) team.
 
+My name in Chinese characters is 刘嘉程
+
 Email: liujc [at] cs.washington.edu
 
 [[CV](/assets/cv/cv.pdf)]
