@@ -1,24 +1,24 @@
-title: Liu Jiacheng (Gary)
-author: Liu Jiacheng (Gary)
-email: liujch1998@gmail.com
-description: >
-  This is my home page. I will write blogs on my research and projects, 
-  encompassing artificial intelligence, natural language processing, 
-  virtual reality, and competitive programming, as well as my life and hobbies. 
+title: Jiacheng (Gary) Liu
+# author: Jiacheng (Gary) Liu
+# email: liujch1998@gmail.com
+# description: >
+#   This is my home page. I will write blogs on my research and projects,
+#   encompassing artificial intelligence, natural language processing,
+#   virtual reality, and competitive programming, as well as my life and hobbies.
 
-google_analytics: UA-139146855-1
+# google_analytics: UA-139146855-1
 
 show_excerpts: true
 
-minima:
-  social_links:
-    facebook: liujch1998
-    linkedin: liujch1998
-    github: liujch1998
+# minima:
+#   social_links:
+#     github: liujch1998
+#     twitter: liujc1998
+#     facebook: liujch1998
+#     linkedin: liujch1998
+#     youtube_channel: UCG06GwB1IK0bXXrTcRe5Elw
 
 header_pages:
-  - about.md
-  - projects.md
-  - cv.md
+  - index.md
 
 theme: minima
