@@ -34,14 +34,19 @@ Email: liujc [at] cs.washington.edu
 
 ## Preprints
 
+Generated Knowledge Prompting for Commonsense Reasoning \\
+**Jiacheng Liu**, Alisa Liu, Ximing Lu, Sean Welleck, Peter West, Ronan Le Bras, Yejin Choi, Hannaneh Hajishirzi \\
+Arxiv, 2021 \\
+[[Paper](/assets/papers/GKP_v5.4_arxiv.pdf)]
+
+## Peer-Reviewed Papers
+
 NaturalProofs: Mathematical Theorem Proving in Natural Language \\
 Sean Welleck, **Jiacheng Liu**, Ronan Le Bras, Hannaneh Hajishirzi, Yejin Choi, Kyunghyun Cho \\
-Arxiv, 2021 \\
+NeurIPS 2021 Datasets and Benchmarks Track \\
 [[Paper](https://wellecks.github.io/naturalproofs/welleck2021naturalproofs.pdf)]
 [[Data/Code/Models](https://github.com/wellecks/naturalproofs)]
 [[Project Page](https://wellecks.github.io/naturalproofs/)]
-
-## Peer-Reviewed Papers
 
 Phrase grounding by soft-label chain conditional random field \\
 **Jiacheng Liu**, Julia Hockenmaier \\
