@@ -38,6 +38,7 @@ Generated Knowledge Prompting for Commonsense Reasoning \\
 **Jiacheng Liu**, Alisa Liu, Ximing Lu, Sean Welleck, Peter West, Ronan Le Bras, Yejin Choi, Hannaneh Hajishirzi \\
 Arxiv, 2021 \\
 [[Arxiv](https://arxiv.org/pdf/2110.08387.pdf)]
+[[Paper](/assets/papers/GKP_v8.pdf)]
 
 ## Peer-Reviewed Papers
 
