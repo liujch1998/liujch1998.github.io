@@ -8,7 +8,7 @@ I am a `(Now() - 04/2021).ceil().ordinal()` year PhD student studying natural la
 My research focus is commonsense reasoning, mathematical reasoning, and text generation.
 I am fortunate to be advised by Prof. Yejin Choi and Prof. Hanna Hajishirzi.
 
-Previously, I received B.S. in Computer Science from University of Illinois at Urbana-Champaign.
+Previously, I received B.S. in Computer Science from University of Illinois at Urbana-Champaign, where I worked with Prof. Julia Hockenmaier.
 I used to work in Facebook's Natural Language Generation (NLG) team.
 
 My name in Chinese characters is 刘嘉程
@@ -19,12 +19,17 @@ Email: liujc [at] cs.washington.edu
 [[Google Scholar](https://scholar.google.com/citations?user=GJfoBZAAAAAJ)]
 [[GitHub](https://github.com/liujch1998)]
 [[Twitter](https://twitter.com/liujc1998)]
-<!--
-[[Facebook](https://www.facebook.com/liujch1998/)]
 [[LinkedIn](https://www.linkedin.com/in/liujch1998/)]
-[[YouTube](https://www.youtube.com/channel/UCG06GwB1IK0bXXrTcRe5Elw)]
+
+Research and other blogs: this website and 
 [[Zhihu](https://www.zhihu.com/people/liujch1998)]
--->
+
+Private pilot and other personal life VLOGs:
+[[Bilibili](https://space.bilibili.com/326361080)]
+[[YouTube](https://www.youtube.com/channel/UCG06GwB1IK0bXXrTcRe5Elw)]
+
+Personal:
+[[Facebook](https://www.facebook.com/liujch1998/)]
 
 ---
 
@@ -34,13 +39,12 @@ Email: liujc [at] cs.washington.edu
 
 ## Preprints
 
-Generated Knowledge Prompting for Commonsense Reasoning \\
-**Jiacheng Liu**, Alisa Liu, Ximing Lu, Sean Welleck, Peter West, Ronan Le Bras, Yejin Choi, Hannaneh Hajishirzi \\
-Arxiv, 2021 \\
-[[Arxiv](https://arxiv.org/pdf/2110.08387.pdf)]
-[[Paper](/assets/papers/GKP_v8.pdf)]
-
 ## Peer-Reviewed Papers
+
+[Generated Knowledge Prompting for Commonsense Reasoning](https://arxiv.org/pdf/2110.08387.pdf) \\
+**Jiacheng Liu**, Alisa Liu, Ximing Lu, Sean Welleck, Peter West, Ronan Le Bras, Yejin Choi, Hannaneh Hajishirzi \\
+ACL 2022 Main Conference \\
+[[Code](https://github.com/liujch1998/GKP)]
 
 [Towards Grounded Natural Language Proof Generation](https://mathai4ed.github.io/papers/papers/paper_10.pdf) \\
 Sean Welleck, **Jiacheng Liu**, Jesse Michael Han, Yejin Choi \\
