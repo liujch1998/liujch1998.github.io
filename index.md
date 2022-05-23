@@ -43,7 +43,7 @@ Personal:
 
 [Generated Knowledge Prompting for Commonsense Reasoning](https://aclanthology.org/2022.acl-long.225.pdf) \\
 **Jiacheng Liu**, Alisa Liu, Ximing Lu, Sean Welleck, Peter West, Ronan Le Bras, Yejin Choi, Hannaneh Hajishirzi \\
-ACL 2022 Main Conference \\
+ACL 2022 (Main Conference) \\
 [[Arxiv](https://arxiv.org/pdf/2110.08387.pdf)]
 [[Code](https://github.com/liujch1998/GKP)]
 [[Talk](https://underline.io/events/284/sessions/10764/lecture/50402-long-generated-knowledge-prompting-for-commonsense-reasoning)]
