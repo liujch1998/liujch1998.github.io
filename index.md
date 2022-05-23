@@ -41,16 +41,25 @@ Personal:
 
 ## Peer-Reviewed Papers
 
-[Generated Knowledge Prompting for Commonsense Reasoning](https://arxiv.org/pdf/2110.08387.pdf) \\
+[Generated Knowledge Prompting for Commonsense Reasoning](https://aclanthology.org/2022.acl-long.225.pdf) \\
 **Jiacheng Liu**, Alisa Liu, Ximing Lu, Sean Welleck, Peter West, Ronan Le Bras, Yejin Choi, Hannaneh Hajishirzi \\
 ACL 2022 Main Conference \\
+[[Arxiv](https://arxiv.org/pdf/2110.08387.pdf)]
 [[Code](https://github.com/liujch1998/GKP)]
+[[Talk](https://underline.io/events/284/sessions/10764/lecture/50402-long-generated-knowledge-prompting-for-commonsense-reasoning)]
+[[Poster](https://underline.io/events/284/sessions/10764/lecture/50402-long-generated-knowledge-prompting-for-commonsense-reasoning)]
 
 [Towards Grounded Natural Language Proof Generation](https://mathai4ed.github.io/papers/papers/paper_10.pdf) \\
 Sean Welleck, **Jiacheng Liu**, Jesse Michael Han, Yejin Choi \\
 NeurIPS 2021 MATHAI4ED Workshop (Contributed Talk) \\
-[[Poster](https://mathai4ed.github.io/papers/posters/poster_10.png)]
 [[Talk](https://neurips.cc/virtual/2021/workshop/21828)]
+[[Poster](https://mathai4ed.github.io/papers/posters/poster_10.png)]
+
+[NaturalProofs: Mathematics meets Natural Language](http://aitp-conference.org/2021/abstract/paper_4.pdf) \\
+Sean Welleck, **Jiacheng Liu**, Ronan Le Bras, Hannaneh Hajishirzi, Yejin Choi, Kyunghyun Cho \\
+AITP 2021 (Contributed Talk) \\
+[[Talk](http://grid01.ciirc.cvut.cz/~mptp/zoomaitp/2021-09-07a/zoom_1.mp4)]
+[[Slides](http://aitp-conference.org/2021/slides/SW.pdf)]
 
 [NaturalProofs: Mathematical Theorem Proving in Natural Language](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/d9d4f495e875a2e075a1a4a6e1b9770f-Paper-round1.pdf) \\
 Sean Welleck, **Jiacheng Liu**, Ronan Le Bras, Hannaneh Hajishirzi, Yejin Choi, Kyunghyun Cho \\
