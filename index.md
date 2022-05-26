@@ -39,6 +39,11 @@ Personal:
 
 ## Preprints
 
+[NaturalProver: Grounded Mathematical Proof Generation with Language Models](https://arxiv.org/pdf/2205.12910.pdf) \\
+Sean Welleck, **Jiacheng Liu**, Ximing Lu, Hannaneh Hajishirzi, Yejin Choi \\
+Arxiv, 2022
+[[Code](https://github.com/wellecks/naturalprover)]
+
 ## Peer-Reviewed Papers
 
 [Generated Knowledge Prompting for Commonsense Reasoning](https://aclanthology.org/2022.acl-long.225.pdf) \\
