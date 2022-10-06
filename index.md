@@ -39,12 +39,25 @@ Personal:
 
 ## Preprints
 
-[NaturalProver: Grounded Mathematical Proof Generation with Language Models](https://arxiv.org/pdf/2205.12910.pdf) \\
-Sean Welleck, **Jiacheng Liu**, Ximing Lu, Hannaneh Hajishirzi, Yejin Choi \\
-Arxiv, 2022
-[[Code](https://github.com/wellecks/naturalprover)]
+[Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs](https://openreview.net/pdf?id=SMa9EAovKMC) \\
+Albert Qiaochu Jiang, Sean Welleck, Jin Peng Zhou, Timothee Lacroix, **Jiacheng Liu**, Wenda Li, Mateja Jamnik, Guillaume Lample, Yuhuai Wu \\
+Under submission to ICLR 2023 \\
 
 ## Peer-Reviewed Papers
+
+[Rainier: Reinforced Knowledge Introspector for Commonsense Question Answering](/assets/papers/Rainier_v1.7.pdf) \\
+**Jiacheng Liu**, Skyler Hallinan, Ximing Lu, Pengfei He, Hannaneh Hajishirzi, Yejin Choi \\
+EMNLP 2022 (Main Conference) \\
+
+[NaturalProver: Grounded Mathematical Proof Generation with Language Models](https://arxiv.org/pdf/2205.12910.pdf) \\
+Sean Welleck, **Jiacheng Liu**, Ximing Lu, Hannaneh Hajishirzi, Yejin Choi \\
+NeurIPS 2022 \\
+[[Code](https://github.com/wellecks/naturalprover)]
+
+[NaturalProver: Grounded Natural Language Proof Generation with Language Models](http://aitp-conference.org/2022/abstract/AITP_2022_paper_12.pdf) \\
+Sean Welleck, **Jiacheng Liu**, Ximing Lu, Hannaneh Hajishirzi, Yejin Choi \\
+AITP 2022 (Contributed Talk) \\
+[[Talk](http://grid01.ciirc.cvut.cz/~mptp/zoomaitp/2022-09-07/video1696925438.mp4)]
 
 [Generated Knowledge Prompting for Commonsense Reasoning](https://aclanthology.org/2022.acl-long.225.pdf) \\
 **Jiacheng Liu**, Alisa Liu, Ximing Lu, Sean Welleck, Peter West, Ronan Le Bras, Yejin Choi, Hannaneh Hajishirzi \\
@@ -60,12 +73,6 @@ NeurIPS 2021 MATHAI4ED Workshop (Contributed Talk) \\
 [[Talk](https://neurips.cc/virtual/2021/workshop/21828)]
 [[Poster](https://mathai4ed.github.io/papers/posters/poster_10.png)]
 
-[NaturalProofs: Mathematics meets Natural Language](http://aitp-conference.org/2021/abstract/paper_4.pdf) \\
-Sean Welleck, **Jiacheng Liu**, Ronan Le Bras, Hannaneh Hajishirzi, Yejin Choi, Kyunghyun Cho \\
-AITP 2021 (Contributed Talk) \\
-[[Talk](http://grid01.ciirc.cvut.cz/~mptp/zoomaitp/2021-09-07a/zoom_1.mp4)]
-[[Slides](http://aitp-conference.org/2021/slides/SW.pdf)]
-
 [NaturalProofs: Mathematical Theorem Proving in Natural Language](https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/d9d4f495e875a2e075a1a4a6e1b9770f-Paper-round1.pdf) \\
 Sean Welleck, **Jiacheng Liu**, Ronan Le Bras, Hannaneh Hajishirzi, Yejin Choi, Kyunghyun Cho \\
 NeurIPS 2021 Datasets and Benchmarks Track (Oral, 1%) \\
@@ -74,6 +81,12 @@ NeurIPS 2021 Datasets and Benchmarks Track (Oral, 1%) \\
 [[Project Page](https://wellecks.github.io/naturalproofs/)]
 [[Talk](https://nips.cc/Conferences/2021/ScheduleMultitrack?event=38450)]
 [[Slides](https://drive.google.com/file/d/1ZqN_ClsP6Y1_aFVsW_61pcvgcpJ3E4m9/view)]
+
+[NaturalProofs: Mathematics meets Natural Language](http://aitp-conference.org/2021/abstract/paper_4.pdf) \\
+Sean Welleck, **Jiacheng Liu**, Ronan Le Bras, Hannaneh Hajishirzi, Yejin Choi, Kyunghyun Cho \\
+AITP 2021 (Contributed Talk) \\
+[[Talk](http://grid01.ciirc.cvut.cz/~mptp/zoomaitp/2021-09-07a/zoom_1.mp4)]
+[[Slides](http://aitp-conference.org/2021/slides/SW.pdf)]
 
 [Phrase Grounding by Soft-Label Chain Conditional Random Field](https://www.aclweb.org/anthology/D19-1515.pdf) \\
 **Jiacheng Liu**, Julia Hockenmaier \\
