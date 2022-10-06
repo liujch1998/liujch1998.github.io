@@ -41,13 +41,13 @@ Personal:
 
 [Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs](https://openreview.net/pdf?id=SMa9EAovKMC) \\
 Albert Qiaochu Jiang, Sean Welleck, Jin Peng Zhou, Timothee Lacroix, **Jiacheng Liu**, Wenda Li, Mateja Jamnik, Guillaume Lample, Yuhuai Wu \\
-Under submission to ICLR 2023 \\
+Under submission to ICLR 2023
 
 ## Peer-Reviewed Papers
 
-[Rainier: Reinforced Knowledge Introspector for Commonsense Question Answering](/assets/papers/Rainier_v1.7.pdf) \\
-**Jiacheng Liu**, Skyler Hallinan, Ximing Lu, Pengfei He, Hannaneh Hajishirzi, Yejin Choi \\
-EMNLP 2022 (Main Conference) \\
+[Rainier: Reinforced Knowledge Introspector for Commonsense Question Answering](/assets/papers/Rainier_v2.pdf) \\
+**Jiacheng Liu**, Skyler Hallinan, Ximing Lu, Pengfei He, Sean Welleck, Hannaneh Hajishirzi, Yejin Choi \\
+EMNLP 2022 (Main Conference)
 
 [NaturalProver: Grounded Mathematical Proof Generation with Language Models](https://arxiv.org/pdf/2205.12910.pdf) \\
 Sean Welleck, **Jiacheng Liu**, Ximing Lu, Hannaneh Hajishirzi, Yejin Choi \\
