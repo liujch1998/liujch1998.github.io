@@ -45,13 +45,17 @@ Under submission to ICLR 2023
 
 ## Peer-Reviewed Papers
 
-[Rainier: Reinforced Knowledge Introspector for Commonsense Question Answering](/assets/papers/Rainier_v2.pdf) \\
+[Rainier: Reinforced Knowledge Introspector for Commonsense Question Answering](https://arxiv.org/pdf/2210.03078.pdf) \\
 **Jiacheng Liu**, Skyler Hallinan, Ximing Lu, Pengfei He, Sean Welleck, Hannaneh Hajishirzi, Yejin Choi \\
 EMNLP 2022 (Main Conference)
+[[Arxiv](https://arxiv.org/pdf/2210.03078.pdf)]
+[[Code](https://github.com/liujch1998/rainier)]
+[[Demo](http://qa.cs.washington.edu:14411/)]
 
 [NaturalProver: Grounded Mathematical Proof Generation with Language Models](https://arxiv.org/pdf/2205.12910.pdf) \\
 Sean Welleck, **Jiacheng Liu**, Ximing Lu, Hannaneh Hajishirzi, Yejin Choi \\
 NeurIPS 2022 \\
+[[Arxiv](https://arxiv.org/pdf/2205.12910.pdf)]
 [[Code](https://github.com/wellecks/naturalprover)]
 
 [NaturalProver: Grounded Natural Language Proof Generation with Language Models](http://aitp-conference.org/2022/abstract/AITP_2022_paper_12.pdf) \\
