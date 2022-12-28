@@ -42,6 +42,7 @@ Personal:
 [Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs](https://openreview.net/pdf?id=SMa9EAovKMC) \\
 Albert Qiaochu Jiang, Sean Welleck, Jin Peng Zhou, Timothee Lacroix, **Jiacheng Liu**, Wenda Li, Mateja Jamnik, Guillaume Lample, Yuhuai Wu \\
 Under submission to ICLR 2023
+[[Arxiv](https://arxiv.org/pdf/2210.12283.pdf)]
 
 ## Peer-Reviewed Papers
 
