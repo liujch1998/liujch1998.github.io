@@ -39,19 +39,21 @@ Personal:
 
 ## Preprints
 
-[Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs](https://openreview.net/pdf?id=SMa9EAovKMC) \\
-Albert Qiaochu Jiang, Sean Welleck, Jin Peng Zhou, Timothee Lacroix, **Jiacheng Liu**, Wenda Li, Mateja Jamnik, Guillaume Lample, Yuhuai Wu \\
-Under submission to ICLR 2023
-[[Arxiv](https://arxiv.org/pdf/2210.12283.pdf)]
-
 ## Peer-Reviewed Papers
 
-[Rainier: Reinforced Knowledge Introspector for Commonsense Question Answering](https://arxiv.org/pdf/2210.03078.pdf) \\
+[Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs](https://openreview.net/pdf?id=SMa9EAovKMC) \\
+Albert Qiaochu Jiang, Sean Welleck, Jin Peng Zhou, Timothee Lacroix, **Jiacheng Liu**, Wenda Li, Mateja Jamnik, Guillaume Lample, Yuhuai Wu \\
+ICLR 2023 \\
+[[Arxiv](https://arxiv.org/pdf/2210.12283.pdf)]
+
+[Rainier: Reinforced Knowledge Introspector for Commonsense Question Answering](https://aclanthology.org/2022.emnlp-main.611.pdf) \\
 **Jiacheng Liu**, Skyler Hallinan, Ximing Lu, Pengfei He, Sean Welleck, Hannaneh Hajishirzi, Yejin Choi \\
-EMNLP 2022 (Main Conference)
+EMNLP 2022 (Main Conference) \\
 [[Arxiv](https://arxiv.org/pdf/2210.03078.pdf)]
-[[Code](https://github.com/liujch1998/rainier)]
-[[Demo](http://qa.cs.washington.edu:14411/)]
+[[Code/Data](https://github.com/liujch1998/rainier)]
+[[Models](https://huggingface.co/liujch1998/rainier-large)]
+[[Demo](https://huggingface.co/spaces/liujch1998/rainier)]
+<!-- [[Demo](http://qa.cs.washington.edu:14411/)] -->
 
 [NaturalProver: Grounded Mathematical Proof Generation with Language Models](https://arxiv.org/pdf/2205.12910.pdf) \\
 Sean Welleck, **Jiacheng Liu**, Ximing Lu, Hannaneh Hajishirzi, Yejin Choi \\
