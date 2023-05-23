@@ -39,6 +39,13 @@ Personal:
 
 ## Preprints
 
+Vera: A General-Purpose Plausibility Estimation Model for Commonsense Statements \\
+**Jiacheng Liu**, Wenya Wang, Dianzhuo Wang, Noah A. Smith, Yejin Choi, Hannaneh Hajishirzi \\
+[[Arxiv](https://arxiv.org/pdf/2305.03695.pdf)]
+[[Code](https://github.com/liujch1998/vera)]
+[[Model](https://huggingface.co/liujch1998/vera)]
+[[Demo](https://huggingface.co/spaces/liujch1998/vera)]
+
 ## Peer-Reviewed Papers
 
 [Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs](https://openreview.net/pdf?id=SMa9EAovKMC) \\
