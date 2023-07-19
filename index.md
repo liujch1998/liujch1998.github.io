@@ -7,6 +7,7 @@ layout: home
 I am a `(Now() - 04/2021).ceil().ordinal()` year PhD student studying natural language processing (NLP) at University of Washington.
 My research focus is commonsense reasoning, mathematical reasoning, and text generation.
 I am fortunate to be advised by Prof. Yejin Choi and Prof. Hanna Hajishirzi.
+I am also a visiting researcher at Meta AI.
 
 Previously, I received B.S. in Computer Science from University of Illinois at Urbana-Champaign, where I worked with Prof. Julia Hockenmaier.
 I used to work in Facebook's Natural Language Generation (NLG) team.
@@ -38,6 +39,10 @@ Personal:
 # Publications
 
 ## Preprints
+
+Inverse Scaling: When Bigger Isn't Better \\
+Ian R McKenzie, ..., **Jiacheng Liu**, ..., Samuel R Bowman, Ethan Perez \\
+[[Arxiv](https://arxiv.org/pdf/2306.09479.pdf)]
 
 Vera: A General-Purpose Plausibility Estimation Model for Commonsense Statements \\
 **Jiacheng Liu**, Wenya Wang, Dianzhuo Wang, Noah A. Smith, Yejin Choi, Hannaneh Hajishirzi \\
