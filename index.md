@@ -40,18 +40,29 @@ Personal:
 
 ## Preprints
 
-Inverse Scaling: When Bigger Isn't Better \\
-Ian R McKenzie, ..., **Jiacheng Liu**, ..., Samuel R Bowman, Ethan Perez \\
-[[Arxiv](https://arxiv.org/pdf/2306.09479.pdf)]
+Making PPO even better: Value-Guided Monte-Carlo Tree Search decoding \\
+**Jiacheng Liu**, Andrew Cohen, Ramakanth Pasunuru, Yejin Choi, Hannaneh Hajishirzi, Asli Celikyilmaz \\
+Under review at ICLR 2024 \\
+[[Arxiv](https://arxiv.org/pdf/2309.15028.pdf)]
+
+## Peer-Reviewed Papers
+
+Crystal: Introspective Reasoners Reinforced with Self-Feedback \\
+**Jiacheng Liu**, Ramakanth Pasunuru, Hannaneh Hajishirzi, Yejin Choi, Asli Celikyilmaz \\
+EMNLP 2023 (Main Conference) \\
 
 Vera: A General-Purpose Plausibility Estimation Model for Commonsense Statements \\
 **Jiacheng Liu**, Wenya Wang, Dianzhuo Wang, Noah A. Smith, Yejin Choi, Hannaneh Hajishirzi \\
+EMNLP 2023 (Main Conference) \\
 [[Arxiv](https://arxiv.org/pdf/2305.03695.pdf)]
 [[Code](https://github.com/liujch1998/vera)]
 [[Model](https://huggingface.co/liujch1998/vera)]
 [[Demo](https://huggingface.co/spaces/liujch1998/vera)]
 
-## Peer-Reviewed Papers
+Inverse Scaling: When Bigger Isn't Better \\
+Ian R McKenzie, ..., **Jiacheng Liu**, ..., Samuel R Bowman, Ethan Perez \\
+TMLR \\
+[[Arxiv](https://arxiv.org/pdf/2306.09479.pdf)]
 
 [Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs](https://openreview.net/pdf?id=SMa9EAovKMC) \\
 Albert Qiaochu Jiang, Sean Welleck, Jin Peng Zhou, Timothee Lacroix, **Jiacheng Liu**, Wenda Li, Mateja Jamnik, Guillaume Lample, Yuhuai Wu \\
