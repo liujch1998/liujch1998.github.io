@@ -50,6 +50,10 @@ Under review at ICLR 2024 \\
 Crystal: Introspective Reasoners Reinforced with Self-Feedback \\
 **Jiacheng Liu**, Ramakanth Pasunuru, Hannaneh Hajishirzi, Yejin Choi, Asli Celikyilmaz \\
 EMNLP 2023 (Main Conference) \\
+[[Arxiv](https://arxiv.org/pdf/2310.04921.pdf)]
+[[Code](https://github.com/liujch1998/crystal)]
+[Models: [large](https://huggingface.co/liujch1998/crystal-large) [3b](https://huggingface.co/liujch1998/crystal-3b) [11b](https://huggingface.co/liujch1998/crystal-11b)]
+[[Demo](https://huggingface.co/spaces/liujch1998/crystal)]
 
 Vera: A General-Purpose Plausibility Estimation Model for Commonsense Statements \\
 **Jiacheng Liu**, Wenya Wang, Dianzhuo Wang, Noah A. Smith, Yejin Choi, Hannaneh Hajishirzi \\
@@ -74,7 +78,7 @@ ICLR 2023 \\
 EMNLP 2022 (Main Conference) \\
 [[Arxiv](https://arxiv.org/pdf/2210.03078.pdf)]
 [[Code/Data](https://github.com/liujch1998/rainier)]
-[[Models](https://huggingface.co/liujch1998/rainier-large)]
+[Models: [Policy](https://huggingface.co/liujch1998/rainier-large) [Value](https://huggingface.co/liujch1998/rainier-large-value)]
 [[Demo](https://huggingface.co/spaces/liujch1998/rainier)]
 <!-- [[Demo](http://qa.cs.washington.edu:14411/)] -->
 
