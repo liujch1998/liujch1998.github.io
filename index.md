@@ -45,6 +45,14 @@ Making PPO even better: Value-Guided Monte-Carlo Tree Search decoding \\
 Under review at ICLR 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2309.15028.pdf)]
 
+MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts \\
+Pan Lu, Hritik Bansal, Tony Xia, **Jiacheng Liu**, Chunyuan Li, Hannaneh Hajishirzi, Hao Cheng, Kai-Wei Chang, Michel Galley, Jianfeng Gao \\
+Under review at ICLR 2024 \\
+[[Arxiv](https://arxiv.org/pdf/2310.02255.pdf)]
+[[Project Page](https://mathvista.github.io)]
+[[Code](https://github.com/lupantech/MathVista)]
+[[Dataset](https://drive.google.com/file/d/1jX_nKaoDALEttiN1IR0dr89qLVt8yBkO/view)]
+
 ## Peer-Reviewed Papers
 
 Crystal: Introspective Reasoners Reinforced with Self-Feedback \\
