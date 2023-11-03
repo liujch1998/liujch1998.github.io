@@ -47,6 +47,7 @@ Under review at ICLR 2024 \\
 
 [MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts](https://arxiv.org/pdf/2310.02255.pdf) \\
 Pan Lu, Hritik Bansal, Tony Xia, **Jiacheng Liu**, Chunyuan Li, Hannaneh Hajishirzi, Hao Cheng, Kai-Wei Chang, Michel Galley, Jianfeng Gao \\
+NeurIPS 2023 MATH-AI Workshop \\
 Under review at ICLR 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2310.02255.pdf)]
 [[Project Page](https://mathvista.github.io)]
