@@ -36,6 +36,15 @@ Personal:
 
 <br/>
 
+# News
+
+* (2023.10) [**PPO-MCTS**](https://arxiv.org/pdf/2309.15028.pdf) is [featured by](https://mp.weixin.qq.com/s/Zat0cOa5C8S8O5qEEbLcrg) 机器之心 on WeChat!
+* (2023.10) [**Vera**](https://arxiv.org/pdf/2305.03695.pdf) and [**Crystal**](https://arxiv.org/pdf/2310.04921.pdf) are accepted to EMNLP 2023 (main conference).
+* (2023.09) The [Inverse Scaling](https://arxiv.org/pdf/2306.09479.pdf) paper is accepted to TMLR! Check out our contributed dataset, `memo-trap`, where LLMs demonstrate the strongest inverse scaling trends.
+* (2023.07) I am awarded the [Qualcomm Innovation Fellowship](https://www.qualcomm.com/research/university-relations/innovation-fellowship/2023-north-america) for academic year 2023-2024.
+* (2023.05) Invited talk the the MLNLP Seminar: [*Estimating the plausibility of commonsense statements*](https://mp.weixin.qq.com/s/yEqKWY8ksX_3NwZ15QXQYw).
+* (2023.02) Our submission to the [Inverse Scaling Challenge](https://github.com/inverse-scaling/prize), `memo-trap`, [receives](https://irmckenzie.co.uk/round2) one of the 11 Third Prizes!
+
 # Publications
 
 ## Preprints
