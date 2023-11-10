@@ -49,7 +49,7 @@ Personal:
 
 ## Preprints
 
-[Making PPO even better: Value-Guided Monte-Carlo Tree Search decoding](https://arxiv.org/pdf/2309.15028.pdf) \\
+[Don't throw away your value model! Making PPO even better via Value-Guided Monte-Carlo Tree Search decoding](https://arxiv.org/pdf/2309.15028.pdf) \\
 **Jiacheng Liu**, Andrew Cohen, Ramakanth Pasunuru, Yejin Choi, Hannaneh Hajishirzi, Asli Celikyilmaz \\
 Under review at ICLR 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2309.15028.pdf)]
@@ -68,7 +68,7 @@ Under review at ICLR 2024 \\
 
 [Crystal: Introspective Reasoners Reinforced with Self-Feedback](https://arxiv.org/pdf/2310.04921.pdf) \\
 **Jiacheng Liu**, Ramakanth Pasunuru, Hannaneh Hajishirzi, Yejin Choi, Asli Celikyilmaz \\
-EMNLP 2023 (Main Conference) \\
+EMNLP 2023 (Main Conference, Oral) \\
 [[Arxiv](https://arxiv.org/pdf/2310.04921.pdf)]
 [[Code](https://github.com/liujch1998/crystal)]
 [Models: [large](https://huggingface.co/liujch1998/crystal-large) [3b](https://huggingface.co/liujch1998/crystal-3b) [11b](https://huggingface.co/liujch1998/crystal-11b)]
@@ -76,14 +76,14 @@ EMNLP 2023 (Main Conference) \\
 
 [Vera: A General-Purpose Plausibility Estimation Model for Commonsense Statements](https://arxiv.org/pdf/2305.03695.pdf) \\
 **Jiacheng Liu**, Wenya Wang, Dianzhuo Wang, Noah A. Smith, Yejin Choi, Hannaneh Hajishirzi \\
-EMNLP 2023 (Main Conference) \\
+EMNLP 2023 (Main Conference, Oral) \\
 [[Arxiv](https://arxiv.org/pdf/2305.03695.pdf)]
 [[Code](https://github.com/liujch1998/vera)]
 [[Model](https://huggingface.co/liujch1998/vera)]
 [[Demo](https://huggingface.co/spaces/liujch1998/vera)]
 [[Dataset](https://huggingface.co/datasets/liujch1998/vera_contrib)]
 
-[Inverse Scaling: When Bigger Isn't Better](https://arxiv.org/pdf/2306.09479.pdf) \\
+[Inverse Scaling: When Bigger Isn't Better](https://openreview.net/pdf?id=DwgRm72GQF) \\
 Ian R McKenzie, ..., **Jiacheng Liu**, ..., Samuel R Bowman, Ethan Perez \\
 TMLR \\
 [[Arxiv](https://arxiv.org/pdf/2306.09479.pdf)]
@@ -102,7 +102,7 @@ EMNLP 2022 (Main Conference) \\
 [[Demo](https://huggingface.co/spaces/liujch1998/rainier)]
 <!-- [[Demo](http://qa.cs.washington.edu:14411/)] -->
 
-[NaturalProver: Grounded Mathematical Proof Generation with Language Models](https://arxiv.org/pdf/2205.12910.pdf) \\
+[NaturalProver: Grounded Mathematical Proof Generation with Language Models](https://papers.nips.cc/paper_files/paper/2022/file/1fc548a8243ad06616eee731e0572927-Paper-Conference.pdf) \\
 Sean Welleck, **Jiacheng Liu**, Ximing Lu, Hannaneh Hajishirzi, Yejin Choi \\
 NeurIPS 2022 \\
 [[Arxiv](https://arxiv.org/pdf/2205.12910.pdf)]
