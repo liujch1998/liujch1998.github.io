@@ -53,6 +53,7 @@ Personal:
 **Jiacheng Liu**, Andrew Cohen, Ramakanth Pasunuru, Yejin Choi, Hannaneh Hajishirzi, Asli Celikyilmaz \\
 Under review at ICLR 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2309.15028.pdf)]
+[[Code](https://github.com/liujch1998/ppo-mcts)]
 
 [MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts](https://arxiv.org/pdf/2310.02255.pdf) \\
 Pan Lu, Hritik Bansal, Tony Xia, **Jiacheng Liu**, Chunyuan Li, Hannaneh Hajishirzi, Hao Cheng, Kai-Wei Chang, Michel Galley, Jianfeng Gao \\
