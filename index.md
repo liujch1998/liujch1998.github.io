@@ -62,7 +62,7 @@ Personal:
 
 ## Peer-Reviewed Papers
 
-[MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts](https://arxiv.org/pdf/2310.02255.pdf) \\
+[MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts](https://openreview.net/pdf?id=KUNzEQMWU7) \\
 Pan Lu, Hritik Bansal, Tony Xia, **Jiacheng Liu**, Chunyuan Li, Hannaneh Hajishirzi, Hao Cheng, Kai-Wei Chang, Michel Galley, Jianfeng Gao \\
 ICLR 2024 (Oral); NeurIPS 2023 MATH-AI Workshop \\
 [[Arxiv](https://arxiv.org/pdf/2310.02255.pdf)]
@@ -90,12 +90,12 @@ EMNLP 2023 (Main Conference, Oral) \\
 
 [Inverse Scaling: When Bigger Isn't Better](https://openreview.net/pdf?id=DwgRm72GQF) \\
 Ian R McKenzie, ..., **Jiacheng Liu**, ..., Samuel R Bowman, Ethan Perez \\
-TMLR \\
+TMLR (2023.10) \\
 [[Arxiv](https://arxiv.org/pdf/2306.09479.pdf)]
 
 [Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs](https://openreview.net/pdf?id=SMa9EAovKMC) \\
 Albert Qiaochu Jiang, Sean Welleck, Jin Peng Zhou, Timothee Lacroix, **Jiacheng Liu**, Wenda Li, Mateja Jamnik, Guillaume Lample, Yuhuai Wu \\
-ICLR 2023 \\
+ICLR 2023 (Oral, 5%) \\
 [[Arxiv](https://arxiv.org/pdf/2210.12283.pdf)]
 
 [Rainier: Reinforced Knowledge Introspector for Commonsense Question Answering](https://aclanthology.org/2022.emnlp-main.611.pdf) \\
