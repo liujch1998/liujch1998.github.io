@@ -38,6 +38,7 @@ Personal:
 
 # News
 
+* (2024.07) [**Infini-gram**](https://arxiv.org/pdf/2401.17377.pdf) and [**PPO-MCTS**](https://arxiv.org/pdf/2309.15028.pdf) are accepted to COLM 2024.
 * (2023.10) [**PPO-MCTS**](https://arxiv.org/pdf/2309.15028.pdf) is [featured by](https://mp.weixin.qq.com/s/Zat0cOa5C8S8O5qEEbLcrg) 机器之心 on WeChat!
 * (2023.10) [**Vera**](https://arxiv.org/pdf/2305.03695.pdf) and [**Crystal**](https://arxiv.org/pdf/2310.04921.pdf) are accepted to EMNLP 2023 (main conference).
 * (2023.09) The [Inverse Scaling](https://arxiv.org/pdf/2306.09479.pdf) paper is accepted to TMLR! Check out our contributed dataset, `memo-trap`, where LLMs demonstrate the strongest inverse scaling trends.
@@ -49,18 +50,32 @@ Personal:
 
 ## Preprints
 
+[Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback](https://arxiv.org/pdf/2406.09279) \\
+Hamish Ivison, Yizhong Wang, **Jiacheng Liu**, Zeqiu Wu, Valentina Pyatkin, Nathan Lambert, Noah A Smith, Yejin Choi, Hannaneh Hajishirzi \\
+[[Arxiv](https://arxiv.org/pdf/2406.09279)]
+[[Code](https://github.com/hamishivi/EasyLM)]
+[[Models](https://huggingface.co/collections/allenai/tulu-v25-suite-66676520fd578080e126f618)]
+
+## Peer-Reviewed Papers
+
 [Infini-gram: Scaling Unbounded n-gram Language Models to a Trillion Tokens](https://arxiv.org/pdf/2401.17377.pdf) \\
 **Jiacheng Liu**, Sewon Min, Luke Zettlemoyer, Yejin Choi, Hannaneh Hajishirzi \\
+COLM 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2401.17377.pdf)]
 [[Code / Pre-built indexes](https://github.com/liujch1998/infini-gram)]
 [[Demo](https://hf.co/spaces/liujch1998/infini-gram)]
 
 [Don't throw away your value model! Making PPO even better via Value-Guided Monte-Carlo Tree Search decoding](https://arxiv.org/pdf/2309.15028.pdf) \\
 **Jiacheng Liu**, Andrew Cohen, Ramakanth Pasunuru, Yejin Choi, Hannaneh Hajishirzi, Asli Celikyilmaz \\
+COLM 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2309.15028.pdf)]
 [[Code](https://github.com/liujch1998/ppo-mcts)]
 
-## Peer-Reviewed Papers
+[Are machines better at complex reasoning? Unveiling human-machine inference gaps in entailment verification](https://aclanthology.org/2024.findings-acl.618.pdf) \\
+Soumya Sanyal, Tianyi Xiao, **Jiacheng Liu**, Wenya Wang, Xiang Ren \\
+ACL 2024 (Findings) \\
+[[Arxiv](https://arxiv.org/pdf/2402.03686)]
+[[Model](https://huggingface.co/soumyasanyal/nli-entailment-verifier-xxl)]
 
 [MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts](https://openreview.net/pdf?id=KUNzEQMWU7) \\
 Pan Lu, Hritik Bansal, Tony Xia, **Jiacheng Liu**, Chunyuan Li, Hannaneh Hajishirzi, Hao Cheng, Kai-Wei Chang, Michel Galley, Jianfeng Gao \\
