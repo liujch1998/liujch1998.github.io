@@ -62,7 +62,7 @@ Hamish Ivison, Yizhong Wang, **Jiacheng Liu**, Zeqiu Wu, Valentina Pyatkin, Nath
 **Jiacheng Liu**, Sewon Min, Luke Zettlemoyer, Yejin Choi, Hannaneh Hajishirzi \\
 COLM 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2401.17377.pdf)]
-[[Code / Pre-built indexes](https://github.com/liujch1998/infini-gram)]
+[[Project Page](https://infini-gram.io/)]
 [[Demo](https://hf.co/spaces/liujch1998/infini-gram)]
 
 [Don't throw away your value model! Making PPO even better via Value-Guided Monte-Carlo Tree Search decoding](https://arxiv.org/pdf/2309.15028.pdf) \\
