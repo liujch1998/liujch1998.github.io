@@ -5,9 +5,11 @@ layout: home
 <img src='/assets/Profile.png' width=250 style="float: right;">
 
 I am a `(Now() - 04/2021).ceil().ordinal()` year PhD student studying natural language processing (NLP) at University of Washington.
-My research focus is commonsense reasoning, mathematical reasoning, and text generation.
 I am fortunate to be advised by Prof. Yejin Choi and Prof. Hanna Hajishirzi.
-I am also a visiting researcher at Meta AI.
+I am also a part-time researcher at the Allen Institute for AI.
+
+My current research topics are inspecting massive text corpora, training data attribution, LM pretraining, and scaling laws.
+During my PhD, I have worked on commonsense knowledge generation and verification, automated theorem proving, RLHF, and text decoding.
 
 Previously, I received B.S. in Computer Science from University of Illinois at Urbana-Champaign, where I worked with Prof. Julia Hockenmaier.
 I used to work in Facebook's Natural Language Generation (NLG) team.
@@ -50,22 +52,28 @@ Personal:
 
 ## Preprints
 
+[AI as Humanity's Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text](https://arxiv.org/pdf/2410.04265) \\
+Ximing Lu, Melanie Sclar, Skyler Hallinan, Niloofar Mireshghallah, **Jiacheng Liu**, Seungju Han, Allyson Ettinger, Liwei Jiang, Khyathi Chandu, Nouha Dziri, Yejin Choi \\
+[[Arxiv](https://arxiv.org/pdf/2410.04265)]
+[[Demo](https://huggingface.co/spaces/liujch1998/creativity)]
+
+## Peer-Reviewed Papers
+
 [Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback](https://arxiv.org/pdf/2406.09279) \\
 Hamish Ivison, Yizhong Wang, **Jiacheng Liu**, Zeqiu Wu, Valentina Pyatkin, Nathan Lambert, Noah A Smith, Yejin Choi, Hannaneh Hajishirzi \\
+NeurIPS 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2406.09279)]
 [[Code](https://github.com/hamishivi/EasyLM)]
 [[Models](https://huggingface.co/collections/allenai/tulu-v25-suite-66676520fd578080e126f618)]
 
-## Peer-Reviewed Papers
-
-[Infini-gram: Scaling Unbounded n-gram Language Models to a Trillion Tokens](https://arxiv.org/pdf/2401.17377.pdf) \\
+[Infini-gram: Scaling Unbounded n-gram Language Models to a Trillion Tokens](https://openreview.net/pdf?id=u2vAyMeLMm) \\
 **Jiacheng Liu**, Sewon Min, Luke Zettlemoyer, Yejin Choi, Hannaneh Hajishirzi \\
-COLM 2024 \\
+COLM 2024 (Oral Spotlight, 2%) \\
 [[Arxiv](https://arxiv.org/pdf/2401.17377.pdf)]
 [[Project Page](https://infini-gram.io/)]
 [[Demo](https://hf.co/spaces/liujch1998/infini-gram)]
 
-[Don't throw away your value model! Making PPO even better via Value-Guided Monte-Carlo Tree Search decoding](https://arxiv.org/pdf/2309.15028.pdf) \\
+[Don't throw away your value model! Making PPO even better via Value-Guided Monte-Carlo Tree Search decoding](https://openreview.net/pdf?id=kh9Zt2Ldmn) \\
 **Jiacheng Liu**, Andrew Cohen, Ramakanth Pasunuru, Yejin Choi, Hannaneh Hajishirzi, Asli Celikyilmaz \\
 COLM 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2309.15028.pdf)]
