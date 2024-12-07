@@ -52,6 +52,10 @@ Personal:
 
 ## Preprints
 
+[Establishing Task Scaling Laws via Compute-Efficient Model Ladders](https://arxiv.org/pdf/2412.04403) \\
+Akshita Bhagia*, **Jiacheng Liu\***, Alexander Wettig, David Heineman, Oyvind Tafjord, Ananya Harsh Jha, Luca Soldaini, Noah A. Smith, Dirk Groeneveld, Pang Wei Koh, Jesse Dodge, Hannaneh Hajishirzi \\
+[[Arxiv](https://arxiv.org/pdf/2412.04403)]
+
 [AI as Humanity's Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text](https://arxiv.org/pdf/2410.04265) \\
 Ximing Lu, Melanie Sclar, Skyler Hallinan, Niloofar Mireshghallah, **Jiacheng Liu**, Seungju Han, Allyson Ettinger, Liwei Jiang, Khyathi Chandu, Nouha Dziri, Yejin Choi \\
 [[Arxiv](https://arxiv.org/pdf/2410.04265)]
