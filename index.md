@@ -52,16 +52,21 @@ Personal:
 
 ## Preprints
 
+[2 OLMo 2 Furious](https://arxiv.org/pdf/2501.00656) \\
+Team OLMo, Pete Walsh, Luca Soldaini, Dirk Groeneveld, Kyle Lo, ..., **Jiacheng Liu**, ..., Ali Farhadi, Noah A. Smith, Hannaneh Hajishirzi \\
+[[Arxiv](https://arxiv.org/pdf/2501.00656)]
+
 [Establishing Task Scaling Laws via Compute-Efficient Model Ladders](https://arxiv.org/pdf/2412.04403) \\
 Akshita Bhagia*, **Jiacheng Liu\***, Alexander Wettig, David Heineman, Oyvind Tafjord, Ananya Harsh Jha, Luca Soldaini, Noah A. Smith, Dirk Groeneveld, Pang Wei Koh, Jesse Dodge, Hannaneh Hajishirzi \\
 [[Arxiv](https://arxiv.org/pdf/2412.04403)]
 
+## Peer-Reviewed Papers
+
 [AI as Humanity's Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text](https://arxiv.org/pdf/2410.04265) \\
 Ximing Lu, Melanie Sclar, Skyler Hallinan, Niloofar Mireshghallah, **Jiacheng Liu**, Seungju Han, Allyson Ettinger, Liwei Jiang, Khyathi Chandu, Nouha Dziri, Yejin Choi \\
+ICLR 2025 \\
 [[Arxiv](https://arxiv.org/pdf/2410.04265)]
 [[Demo](https://huggingface.co/spaces/liujch1998/creativity)]
-
-## Peer-Reviewed Papers
 
 [Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback](https://arxiv.org/pdf/2406.09279) \\
 Hamish Ivison, Yizhong Wang, **Jiacheng Liu**, Zeqiu Wu, Valentina Pyatkin, Nathan Lambert, Noah A Smith, Yejin Choi, Hannaneh Hajishirzi \\
