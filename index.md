@@ -55,6 +55,9 @@ Personal:
 [2 OLMo 2 Furious](https://arxiv.org/pdf/2501.00656) \\
 Team OLMo, Pete Walsh, Luca Soldaini, Dirk Groeneveld, Kyle Lo, ..., **Jiacheng Liu**, ..., Ali Farhadi, Noah A. Smith, Hannaneh Hajishirzi \\
 [[Arxiv](https://arxiv.org/pdf/2501.00656)]
+[[Models/Datasets](https://huggingface.co/collections/allenai/olmo-2-674117b93ab84e98afc72edc)]
+[[Code](https://github.com/allenai/OLMo)]
+[[Demo](https://playground.allenai.org)]
 
 [Establishing Task Scaling Laws via Compute-Efficient Model Ladders](https://arxiv.org/pdf/2412.04403) \\
 Akshita Bhagia*, **Jiacheng Liu\***, Alexander Wettig, David Heineman, Oyvind Tafjord, Ananya Harsh Jha, Luca Soldaini, Noah A. Smith, Dirk Groeneveld, Pang Wei Koh, Jesse Dodge, Hannaneh Hajishirzi \\
@@ -66,6 +69,7 @@ Akshita Bhagia*, **Jiacheng Liu\***, Alexander Wettig, David Heineman, Oyvind Ta
 Ximing Lu, Melanie Sclar, Skyler Hallinan, Niloofar Mireshghallah, **Jiacheng Liu**, Seungju Han, Allyson Ettinger, Liwei Jiang, Khyathi Chandu, Nouha Dziri, Yejin Choi \\
 ICLR 2025 \\
 [[Arxiv](https://arxiv.org/pdf/2410.04265)]
+[[Code](https://github.com/GXimingLu/creativity_index)]
 [[Demo](https://huggingface.co/spaces/liujch1998/creativity)]
 
 [Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback](https://arxiv.org/pdf/2406.09279) \\
