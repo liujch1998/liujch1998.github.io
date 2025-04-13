@@ -6,7 +6,7 @@ layout: home
 
 I am a `(Now() - 04/2021).ceil().ordinal()` year PhD student studying natural language processing (NLP) at University of Washington.
 I am fortunate to be advised by Prof. Yejin Choi and Prof. Hanna Hajishirzi.
-I am also a part-time researcher at the Allen Institute for AI.
+I am also a student researcher at the Allen Institute for AI.
 
 My current research topics are inspecting massive text corpora, training data attribution, LM pretraining, and scaling laws.
 During my PhD, I have worked on commonsense knowledge generation and verification, automated theorem proving, RLHF, and text decoding.
@@ -16,7 +16,7 @@ I used to work in Facebook's Natural Language Generation (NLG) team.
 
 My name in Chinese characters is 刘嘉程
 
-Email: liujc [at] cs.washington.edu
+Email: liujc [at] cs [dot] washington [dot] edu
 
 [[CV](/assets/cv/cv.pdf)]
 [[Google Scholar](https://scholar.google.com/citations?user=GJfoBZAAAAAJ)]
@@ -24,6 +24,7 @@ Email: liujc [at] cs.washington.edu
 [[Twitter](https://twitter.com/liujc1998)]
 [[LinkedIn](https://www.linkedin.com/in/liujch1998/)]
 
+<!--
 Research and other blogs: this website and 
 [[Zhihu](https://www.zhihu.com/people/liujch1998)]
 
@@ -33,6 +34,7 @@ Private pilot and other personal life VLOGs:
 
 Personal:
 [[Facebook](https://www.facebook.com/liujch1998/)]
+-->
 
 ---
 
@@ -40,7 +42,9 @@ Personal:
 
 # News
 
+* (2025.04) Introducing [**OLMoTrace**](https://arxiv.org/pdf/2504.07096): tracing LLM outputs back into their multi-trillion-token training data in real time. Now available on [Ai2 Playground](https://playground.allenai.org)
 * (2024.07) [**Infini-gram**](https://arxiv.org/pdf/2401.17377.pdf) and [**PPO-MCTS**](https://arxiv.org/pdf/2309.15028.pdf) are accepted to COLM 2024.
+* (2024.01) Introducing [**infini-gram**](https://arxiv.org/pdf/2401.17377.pdf): an efficient text search engine, and the biggest n-gram LM ever built.
 * (2023.10) [**PPO-MCTS**](https://arxiv.org/pdf/2309.15028.pdf) is [featured by](https://mp.weixin.qq.com/s/Zat0cOa5C8S8O5qEEbLcrg) 机器之心 on WeChat!
 * (2023.10) [**Vera**](https://arxiv.org/pdf/2305.03695.pdf) and [**Crystal**](https://arxiv.org/pdf/2310.04921.pdf) are accepted to EMNLP 2023 (main conference).
 * (2023.09) The [Inverse Scaling](https://arxiv.org/pdf/2306.09479.pdf) paper is accepted to TMLR! Check out our contributed dataset, `memo-trap`, where LLMs demonstrate the strongest inverse scaling trends.
@@ -51,6 +55,15 @@ Personal:
 # Publications
 
 ## Preprints
+[OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens](https://arxiv.org/pdf/2504.07096) \\
+**Jiacheng Liu**, Taylor Blanton, Yanai Elazar, Sewon Min, YenSung Chen, Arnavi Chheda-Kothary, Huy Tran, Byron Bischoff, Eric Marsh, Michael Schmitz, Cassidy Trier, Aaron Sarnat, Jenna James, Jon Borchardt, Bailey Kuehl, Evie Cheng, Karen Farley, Sruthi Sreeram, Taira Anderson, David Albright, Carissa Schoenick, Luca Soldaini, Dirk Groeneveld, Rock Yuren Pang, Pang Wei Koh, Noah A. Smith, Sophie Lebrecht, Yejin Choi, Hannaneh Hajishirzi, Ali Farhadi, Jesse Dodge \\
+[[Arxiv](https://arxiv.org/pdf/2504.07096)]
+[[Blog](https://allenai.org/blog/olmotrace)]
+[[Code](https://github.com/allenai/infinigram-api)]
+[[Demo](https://playground.allenai.org)]
+[[Twitter](https://x.com/liujc1998/status/1909963236864299068)]
+[[Trailer Video](https://www.youtube.com/watch?v=A71RSAxjVqc)]
+[[Demo Video](https://www.youtube.com/watch?v=wyLRWza_v9M)]
 
 [2 OLMo 2 Furious](https://arxiv.org/pdf/2501.00656) \\
 Team OLMo, Pete Walsh, Luca Soldaini, Dirk Groeneveld, Kyle Lo, ..., **Jiacheng Liu**, ..., Ali Farhadi, Noah A. Smith, Hannaneh Hajishirzi \\
@@ -67,7 +80,7 @@ Akshita Bhagia*, **Jiacheng Liu\***, Alexander Wettig, David Heineman, Oyvind Ta
 
 [AI as Humanity's Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text](https://arxiv.org/pdf/2410.04265) \\
 Ximing Lu, Melanie Sclar, Skyler Hallinan, Niloofar Mireshghallah, **Jiacheng Liu**, Seungju Han, Allyson Ettinger, Liwei Jiang, Khyathi Chandu, Nouha Dziri, Yejin Choi \\
-ICLR 2025 \\
+ICLR 2025 (Oral) \\
 [[Arxiv](https://arxiv.org/pdf/2410.04265)]
 [[Code](https://github.com/GXimingLu/creativity_index)]
 [[Demo](https://huggingface.co/spaces/liujch1998/creativity)]
