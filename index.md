@@ -6,7 +6,7 @@ layout: home
 
 I am a `(Now() - 04/2021).ceil().ordinal()` year PhD student studying natural language processing (NLP) at University of Washington.
 I am fortunate to be advised by Prof. Yejin Choi and Prof. Hanna Hajishirzi.
-I am also a student researcher at the Allen Institute for AI.
+I am also a student researcher at the Allen Institute for AI (Ai2).
 
 My current research topics are inspecting massive text corpora, training data attribution, LM pretraining, and scaling laws.
 During my PhD, I have worked on commonsense knowledge generation and verification, automated theorem proving, RLHF, and text decoding.
@@ -25,7 +25,7 @@ Email: liujc [at] cs [dot] washington [dot] edu
 [[LinkedIn](https://www.linkedin.com/in/liujch1998/)]
 
 <!--
-Research and other blogs: this website and 
+Research and other blogs: this website and
 [[Zhihu](https://www.zhihu.com/people/liujch1998)]
 
 Private pilot and other personal life VLOGs:
@@ -55,15 +55,16 @@ Personal:
 # Publications
 
 ## Preprints
-[OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens](https://arxiv.org/pdf/2504.07096) \\
-**Jiacheng Liu**, Taylor Blanton, Yanai Elazar, Sewon Min, YenSung Chen, Arnavi Chheda-Kothary, Huy Tran, Byron Bischoff, Eric Marsh, Michael Schmitz, Cassidy Trier, Aaron Sarnat, Jenna James, Jon Borchardt, Bailey Kuehl, Evie Cheng, Karen Farley, Sruthi Sreeram, Taira Anderson, David Albright, Carissa Schoenick, Luca Soldaini, Dirk Groeneveld, Rock Yuren Pang, Pang Wei Koh, Noah A. Smith, Sophie Lebrecht, Yejin Choi, Hannaneh Hajishirzi, Ali Farhadi, Jesse Dodge \\
-[[Arxiv](https://arxiv.org/pdf/2504.07096)]
-[[Blog](https://allenai.org/blog/olmotrace)]
-[[Code](https://github.com/allenai/infinigram-api)]
-[[Demo](https://playground.allenai.org)]
-[[Twitter](https://x.com/liujc1998/status/1909963236864299068)]
-[[Trailer Video](https://www.youtube.com/watch?v=A71RSAxjVqc)]
-[[Demo Video](https://www.youtube.com/watch?v=wyLRWza_v9M)]
+
+[Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index](https://arxiv.org/pdf/2506.12229) \\
+Hao Xu, **Jiacheng Liu**, Yejin Choi, Noah A. Smith, Hannaneh Hajishirzi \\
+[[Arxiv](https://arxiv.org/pdf/2506.12229)]
+[[Project Page](https://infini-gram-mini.io/)]
+[[Web Interface](https://huggingface.co/spaces/infini-gram-mini/infini-gram-mini)]
+[[API Endpoint](https://api.infini-gram-mini.io/)]
+[[Code](https://github.com/xuhaoxh/infini-gram-mini)]
+[[Documentation](https://infini-gram-mini.readthedocs.io)]
+[[Contamination Bulletin](https://huggingface.co/spaces/infini-gram-mini/Benchmark-Contamination-Monitoring-System)]
 
 [2 OLMo 2 Furious](https://arxiv.org/pdf/2501.00656) \\
 Team OLMo, Pete Walsh, Luca Soldaini, Dirk Groeneveld, Kyle Lo, ..., **Jiacheng Liu**, ..., Ali Farhadi, Noah A. Smith, Hannaneh Hajishirzi \\
@@ -77,6 +78,22 @@ Akshita Bhagia*, **Jiacheng Liu\***, Alexander Wettig, David Heineman, Oyvind Ta
 [[Arxiv](https://arxiv.org/pdf/2412.04403)]
 
 ## Peer-Reviewed Papers
+
+[OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens](https://arxiv.org/pdf/2504.07096) \\
+**Jiacheng Liu**, Taylor Blanton, Yanai Elazar, Sewon Min, YenSung Chen, Arnavi Chheda-Kothary, Huy Tran, Byron Bischoff, Eric Marsh, Michael Schmitz, Cassidy Trier, Aaron Sarnat, Jenna James, Jon Borchardt, Bailey Kuehl, Evie Cheng, Karen Farley, Sruthi Sreeram, Taira Anderson, David Albright, Carissa Schoenick, Luca Soldaini, Dirk Groeneveld, Rock Yuren Pang, Pang Wei Koh, Noah A. Smith, Sophie Lebrecht, Yejin Choi, Hannaneh Hajishirzi, Ali Farhadi, Jesse Dodge \\
+ACL 2025 System Demonstrations Track \\
+[[Arxiv](https://arxiv.org/pdf/2504.07096)]
+[[Blog](https://allenai.org/blog/olmotrace)]
+[[Web Interface](https://playground.allenai.org)]
+[[Code](https://github.com/allenai/infinigram-api)]
+[[Twitter](https://x.com/liujc1998/status/1909963236864299068)]
+[[Trailer Video](https://www.youtube.com/watch?v=A71RSAxjVqc)]
+[[Demo Video](https://www.youtube.com/watch?v=wyLRWza_v9M)]
+
+[Few-shot viral variant detection via bayesian active learning and biophysics](https://www.biorxiv.org/content/biorxiv/early/2025/03/13/2025.03.12.642881.full.pdf) \\
+Marian Huot, Dianzhuo Wang, **Jiacheng Liu**, Eugene Shakhnovich \\
+PNAS \\
+[[Arxiv](https://www.biorxiv.org/content/biorxiv/early/2025/03/13/2025.03.12.642881.full.pdf)]
 
 [AI as Humanity's Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text](https://arxiv.org/pdf/2410.04265) \\
 Ximing Lu, Melanie Sclar, Skyler Hallinan, Niloofar Mireshghallah, **Jiacheng Liu**, Seungju Han, Allyson Ettinger, Liwei Jiang, Khyathi Chandu, Nouha Dziri, Yejin Choi \\
@@ -97,7 +114,11 @@ NeurIPS 2024 \\
 COLM 2024 (Oral Spotlight, 2%) \\
 [[Arxiv](https://arxiv.org/pdf/2401.17377.pdf)]
 [[Project Page](https://infini-gram.io/)]
-[[Demo](https://hf.co/spaces/liujch1998/infini-gram)]
+[[Web Interface](https://huggingface.co/spaces/liujch1998/infini-gram)]
+[[API Endpoint](https://api.infini-gram.io/)]
+[[Python Package](https://pypi.org/project/infini-gram)]
+[[Code](https://github.com/liujch1998/infini-gram)]
+[[Documentation](https://infini-gram.readthedocs.io)]
 
 [Don't throw away your value model! Making PPO even better via Value-Guided Monte-Carlo Tree Search decoding](https://openreview.net/pdf?id=kh9Zt2Ldmn) \\
 **Jiacheng Liu**, Andrew Cohen, Ramakanth Pasunuru, Yejin Choi, Hannaneh Hajishirzi, Asli Celikyilmaz \\
