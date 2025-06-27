@@ -42,6 +42,8 @@ Personal:
 
 # News
 
+* (2025.06) Talk at IBM Research
+* (2025.05) Talk at UCSD
 * (2025.04) Introducing [**OLMoTrace**](https://arxiv.org/pdf/2504.07096): tracing LLM outputs back into their multi-trillion-token training data in real time. Now available on [Ai2 Playground](https://playground.allenai.org)
 * (2024.07) [**Infini-gram**](https://arxiv.org/pdf/2401.17377.pdf) and [**PPO-MCTS**](https://arxiv.org/pdf/2309.15028.pdf) are accepted to COLM 2024.
 * (2024.01) Introducing [**infini-gram**](https://arxiv.org/pdf/2401.17377.pdf): an efficient text search engine, and the biggest n-gram LM ever built.
