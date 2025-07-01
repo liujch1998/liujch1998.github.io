@@ -8,7 +8,9 @@ Why so? Why this shift in scaling paradigm? Why is scaling pre-training no longe
 In this post, I try to share a technical perspective, drawing from my experience in scaling law research.
 
 The common wisdom of LLM scaling law is that some "loss" $L$ decreases as a function of the amount of pre-training compute $C$:
+
 $$L(C) = \frac{A}{C^\alpha} + E$$
+
 where $A, \alpha, E$ are scalar parameters specific to the definition of loss and the model family.
 Normally, $L$ is defined the language modeling loss on some held-out eval set, but a few papers (including ours) shows that $L$ can also be a loss on some "downstream task" (e.g., the LM loss on the answer tokens in a QA task).
 This functional form is highly empirical and found to work well by the Chinchilla paper and others, so we base our further discussion assuming that this is a good model of how loss terms scale.
@@ -31,25 +33,31 @@ Then the problem is if such scaling is economically efficient, and how fast such
 We know from Moore's Law that with a fixed cost, the amount of compute you get roughly grows exponentially over time.
 (Of course, you can throw more \$\$\$ into the project, but this has a lower ceiling because you have a capped budget, and empirically this can grow no faster than exponential due to the engineering work needed to scale up.)
 This growth is characterized by differential equation
+
 $$
 \frac{dC}{dt} = k \cdot C
 $$
+
 where $k$ is a constant.
 
 Exponential growth sounds pretty nice, huh?
 Well, now let's look at how the loss term improves over time, by applying the chain rule:
+
 $$
 \frac{dL}{dt} = \frac{\partial L}{\partial C} \cdot \frac{dC}{dt} = \big( A \cdot (-\alpha) \cdot C^{-(\alpha + 1)} \big) \cdot (k \cdot C) = -A \alpha k \cdot C^{-\alpha}
 $$
+
 $A, \alpha, k$ are all constant terms, so this means this rate is proportional to $C^{-\alpha}$, which shrinks exponentially over time!
 
 Furthermore, the total amount of loss reduction over an infinite amount of time is actually bounded.
 This can be seen by taking the integral:
+
 $$
 C = b \cdot e^{k \cdot t} \\
 \frac{dL}{dt} = -A \alpha k b \cdot e^{\alpha k \cdot t} \\
 \int_{t=0}^{+\infty}{\frac{dL}{dt}} = -Ab
 $$
+
 This means there's a chance that no matter how long you keep pushing the scaling of training compute, you never reach the inflection point and thus never make meaningful progress on that task.
 
 These two reasons -- the exponential slowdown of progress and boundedness of reducible loss via scaling -- explain why we need to find new scaling paradigms.
