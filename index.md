@@ -68,17 +68,6 @@ Hao Xu, **Jiacheng Liu**, Yejin Choi, Noah A. Smith, Hannaneh Hajishirzi \\
 [[Documentation](https://infini-gram-mini.readthedocs.io)]
 [[Contamination Bulletin](https://huggingface.co/spaces/infini-gram-mini/Benchmark-Contamination-Monitoring-System)]
 
-[2 OLMo 2 Furious](https://arxiv.org/pdf/2501.00656) \\
-Team OLMo, Pete Walsh, Luca Soldaini, Dirk Groeneveld, Kyle Lo, ..., **Jiacheng Liu**, ..., Ali Farhadi, Noah A. Smith, Hannaneh Hajishirzi \\
-[[Arxiv](https://arxiv.org/pdf/2501.00656)]
-[[Models/Datasets](https://huggingface.co/collections/allenai/olmo-2-674117b93ab84e98afc72edc)]
-[[Code](https://github.com/allenai/OLMo)]
-[[Demo](https://playground.allenai.org)]
-
-[Establishing Task Scaling Laws via Compute-Efficient Model Ladders](https://arxiv.org/pdf/2412.04403) \\
-Akshita Bhagia*, **Jiacheng Liu\***, Alexander Wettig, David Heineman, Oyvind Tafjord, Ananya Harsh Jha, Luca Soldaini, Noah A. Smith, Dirk Groeneveld, Pang Wei Koh, Jesse Dodge, Hannaneh Hajishirzi \\
-[[Arxiv](https://arxiv.org/pdf/2412.04403)]
-
 ## Peer-Reviewed Papers
 
 [OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens](https://arxiv.org/pdf/2504.07096) \\
@@ -91,6 +80,19 @@ ACL 2025 System Demonstrations Track \\
 [[Twitter](https://x.com/liujc1998/status/1909963236864299068)]
 [[Trailer Video](https://www.youtube.com/watch?v=A71RSAxjVqc)]
 [[Demo Video](https://www.youtube.com/watch?v=wyLRWza_v9M)]
+
+[2 OLMo 2 Furious](https://arxiv.org/pdf/2501.00656) \\
+Team OLMo, Pete Walsh, Luca Soldaini, Dirk Groeneveld, Kyle Lo, ..., **Jiacheng Liu**, ..., Ali Farhadi, Noah A. Smith, Hannaneh Hajishirzi \\
+COLM 2025 \\
+[[Arxiv](https://arxiv.org/pdf/2501.00656)]
+[[Models/Datasets](https://huggingface.co/collections/allenai/olmo-2-674117b93ab84e98afc72edc)]
+[[Code](https://github.com/allenai/OLMo)]
+[[Demo](https://playground.allenai.org)]
+
+[Establishing Task Scaling Laws via Compute-Efficient Model Ladders](https://arxiv.org/pdf/2412.04403) \\
+Akshita Bhagia*, **Jiacheng Liu\***, Alexander Wettig, David Heineman, Oyvind Tafjord, Ananya Harsh Jha, Luca Soldaini, Noah A. Smith, Dirk Groeneveld, Pang Wei Koh, Jesse Dodge, Hannaneh Hajishirzi \\
+COLM 2025 \\
+[[Arxiv](https://arxiv.org/pdf/2412.04403)]
 
 [Few-shot viral variant detection via bayesian active learning and biophysics](https://www.biorxiv.org/content/biorxiv/early/2025/03/13/2025.03.12.642881.full.pdf) \\
 Marian Huot, Dianzhuo Wang, **Jiacheng Liu**, Eugene Shakhnovich \\
