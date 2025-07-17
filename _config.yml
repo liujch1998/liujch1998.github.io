@@ -18,6 +18,12 @@ show_excerpts: true
 #     linkedin: liujch1998
 #     youtube_channel: UCG06GwB1IK0bXXrTcRe5Elw
 
+minima:
+  nav_pages:
+    - index.md
+    - publications.md
+    - blog.md
+
 header_pages:
   - index.md
   - publications.md
