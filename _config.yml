@@ -20,6 +20,8 @@ show_excerpts: true
 
 header_pages:
   - index.md
+  - publications.md
+  - blog.md
 
 theme: minima
 
