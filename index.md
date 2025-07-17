@@ -38,8 +38,6 @@ Personal:
 
 ---
 
-<br/>
-
 # News
 
 * (2025.06) Talk at IBM Research
@@ -55,8 +53,6 @@ Personal:
 * (2023.02) Our submission to the [Inverse Scaling Challenge](https://github.com/inverse-scaling/prize), `memo-trap`, [receives](https://irmckenzie.co.uk/round2) one of the 11 Third Prizes!
 
 ---
-
-<br/>
 
 # Selected Publications
 
