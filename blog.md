@@ -3,11 +3,6 @@ layout: page
 title: "Blog"
 ---
 
-<div class="home">
-<header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-</header>
-
 {% if site.paginate %}
     {% assign posts = paginator.posts %}
 {% else %}

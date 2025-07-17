@@ -8,8 +8,6 @@ title: Jiacheng Liu
 
 # google_analytics: UA-139146855-1
 
-show_excerpts: true
-
 # minima:
 #   social_links:
 #     github: liujch1998
@@ -23,11 +21,7 @@ minima:
     - index.md
     - publications.md
     - blog.md
-
-header_pages:
-  - index.md
-  - publications.md
-  - blog.md
+  show_excerpts: true
 
 theme: minima
 
