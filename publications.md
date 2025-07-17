@@ -1,8 +1,7 @@
 ---
 layout: page
+title: "Publications"
 ---
-
-# Publications
 
 ## Preprints
 
