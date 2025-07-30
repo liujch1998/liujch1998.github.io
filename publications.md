@@ -19,7 +19,7 @@ Hao Xu, **Jiacheng Liu**, Yejin Choi, Noah A. Smith, Hannaneh Hajishirzi \\
 
 [OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens](https://arxiv.org/pdf/2504.07096) \\
 **Jiacheng Liu**, Taylor Blanton, Yanai Elazar, Sewon Min, YenSung Chen, Arnavi Chheda-Kothary, Huy Tran, Byron Bischoff, Eric Marsh, Michael Schmitz, Cassidy Trier, Aaron Sarnat, Jenna James, Jon Borchardt, Bailey Kuehl, Evie Cheng, Karen Farley, Sruthi Sreeram, Taira Anderson, David Albright, Carissa Schoenick, Luca Soldaini, Dirk Groeneveld, Rock Yuren Pang, Pang Wei Koh, Noah A. Smith, Sophie Lebrecht, Yejin Choi, Hannaneh Hajishirzi, Ali Farhadi, Jesse Dodge \\
-ACL 2025 System Demonstrations Track \\
+ACL 2025 System Demonstrations Track **(Best Demo Award)** \\
 [[Arxiv](https://arxiv.org/pdf/2504.07096)]
 [[Blog](https://allenai.org/blog/olmotrace)]
 [[Web Interface](https://playground.allenai.org)]
