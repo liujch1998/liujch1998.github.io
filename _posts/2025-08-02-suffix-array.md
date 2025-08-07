@@ -3,7 +3,7 @@ layout: post
 title: "Navigating the Ocean of LLM (Pre-)Training Data"
 ---
 
-I write about my journey with infini-gram, OLMoTrace, infini-gram mini, along with several ongoing threads and wishful ideas to pursue.
+I write about my journey with infini-gram, OLMoTrace, infini-gram mini, along with some ongoing threads and wishful ideas to pursue.
 
 ## N-gram search in massive text corpora
 
@@ -25,7 +25,7 @@ This means we need to parallelize the SA index building, and we can't keep all t
 ![](/assets/2025-08-02-suffix-array/sa.png)
 *Illustration of the suffix array, on a toy example with about 20 elements.*
 
-At the time there were parallelized implementations of SA floating around, the most prominent being the [Rust library written by Lee et al](https://github.com/google-research/deduplicate-text-datasets) for text deduplication.
+At the time there were parallelized implementations of SA floating around, the most prominent being the [Rust library](https://github.com/google-research/deduplicate-text-datasets) written by Lee et al for text deduplication.
 Many work, including mine, adapt their code for SA indexing (albeit a few bugs and inefficiencies which I fixed while learning to read Rust), and I really appreciate their awesome release.
 
 With the SA built for corpora like the Pile, we had some findings on memorization, but not interesting enough to put together a paper.
@@ -265,4 +265,152 @@ use cases, contam -->
 
 ## Open-source scalable deduplication
 
+SA was used by [Lee et al](https://github.com/google-research/deduplicate-text-datasets) to deduplicate text corpora, an important step in curating pretraining data since Internet crawls contain heavy duplication.
+Because of my experience with SA, I took on the job of deduplication for developing OLMo 3.
+
+We want to curate a SOTA pretraining dataset, but Lee et al's tool has a few deficiencies: (1) for duplicated substrings, it removes all its appearances, but we want to keep one; (2) it doesn't support "fuzzy removing", i.e., if two nearby strings are removed, then we also want to remove the short piece between them; (3) it is still a bit slow to run for a scale like 10T tokens.
+To address these issues, I made some modifications to infini-gram and released this deduplication tool, [**bsade**](https://github.com/liujch1998/bsade).
+
+I'd like to focus on the efficiency part.
+To use SA for marking duplicated text, we make a sequential pass over the SA, and for each neighboring pair of suffixes, find out if their first $k$ characters are identical.
+The slowest step in SA building is a `merge()` step -- merging several small SAs into a big SA and write back to disk -- and it's particularly slow when the text corpus contains a lot of duplicates.
+The key observation is that this `merge()` can be combined with the sequential SA pass.
+By doing so, we can (1) avoid writing back the big SA to disk, and (2) restrict the length of comparison in `merge()` to $k$ characters, which would speed things up if $k$ is small enough to fit into a disk block.
+After looking at some real data, I found $k = 500$ characters to be a sweet spot.
+With this parameter setting, I removed 14% of Common Crawl (note that I started with a dataset that's already deduped with exact match), reducing a 10T token dataset into a 8.5T token one.
+
+An overarching process in this project is to continually identify the most time-consuming bottleneck and optimize it (usually via parallelization).
+Once you optimize one bottleneck component, another component may become the bottleneck, and it goes on and on.
+But in aggregate, I was able to take the runtime of a single job from 2 days down to 4 hours, which made the dedup of 10T tokens finish in one day and saved lots of cloud compute money.
+
+<!-- new feature: save the first appearance
+virtual merge
+minlen500
+parallelize every component, multi-thread read
+14%, 10T tokens ==> 8.5T tokens -->
+
 ## Combining neural LLMs with n-gram models?
+
+Lastly, I want to share an idea that I think is very cool but didn't get to fully flash out.
+The idea is to improve neural LLMs by combining them with n-gram LMs.
+
+In the infini-gram paper, I showed that a simple interpolation of n-gram and neural LLMs can be a lot better than the neural LLM itself, in terms of language modeling *perplexity*.
+The interpolation happens in the output probability space, and I call it "late fusion":
+$$
+P_\text{hybrid}(x_t | x_{<t}) = \lambda \cdot P_\infty(x_t | x_{<t}) + (1 - \lambda) \cdot P_\text{neural}(x_t | x_{<t})
+$$
+where $P_\infty(x_t | x_{<t})$ is the probability given by what I call an "$\infty$-gram LM": an n-gram LM where n is dynamic for each token and takes the maximum possible context length.
+
+But I found this hybrid model terrible at *autoregressive generation*.
+In many cases, the decoding suddenly goes off the rail into regurgitating from the training data, which can often be topically incoherent to the context.
+I suspected this is because the $\infty$-gram LM is accurate but over-confident: its predictions of the next-token distribution is usually very sparse (in many cases, one-hot), and even with interpolation, the distribution is undesirebly spiky.
+
+This makes me want to do **"early fusion"**: injecting the $\infty$-gram LM's prediction as a "hint" to the neural LLM.
+The intuition is, n-gram LMs encode lots of long-tail knowledge, and hinting neural LLMs with its predictions can free the neural LLMs from having cramming all the knowledge into its parameters, which they can spare to better learn other capabilities.
+
+More technically, we target decoder-only Transformers as the neural LLMs.
+At each token position, I want to inject a *distribution over the vocabulary* as input to the Transformer.
+Canonically, the Transformer's input is the addition of two vectors: a token embedding and a position embedding.
+I propose to add a third embedding: the "$\infty$-gram embedding", calculated as a mixture of token embeddings weighted by the $\infty$-gram distribution.
+If the distribution is one-hot, this embedding would simply be the embedding of that token.
+The $\infty$-gram embedding is applied at *every* token position.
+I refer to this model as **infini-LLM**.
+
+![](/assets/2025-08-02-suffix-array/infini-llm.png)
+*Injecting $\infty$-gram LM's predictions into the input embeddings of Transformers. In the example shown, the only reasonable choice for the last token is "_Engineering", which is given by the $\infty$-gram LM. By injecting its embedding as input, the Transformer can decide to agree with this hint, and thus does not need to memorize the name of this entity.*
+
+Apparently, this change requires re-training the Transformer.
+I based my experiments on an internal version of OLMo-1B (trained between OLMo-0724 and OLMo 2).
+This model was pretrained on the Dolma v1.7 dataset, which I also used as the n-gram datastore.
+The $\infty$-gram LM inference is, well of course, powered by infini-gram.
+
+### Regularizing the $\infty$-gram LM
+
+I wish it were that simple.
+There's an obvious trap: When training the Transformer on each sequence, this sequence also appears in the n-gram datastore, which means almost all predictions made by the $\infty$-gram LM are one-hot and agree with the actual next-token.
+Then the Transformer wouldn't need to learn anything, and the whole model would have zero generalization.
+
+We can see this problem by plotting an "n-gram profile" for some selected token of the training sequence.
+Each bar represent the number of appearances of the n-gram preceding that token; the green portion is where the next-token after each appearance matches with the selected token, and orange portion is for mismatches.
+At small n, the count is big, but accuracy is low (which is exactly the problem with traditional 5-gram LMs).
+At large n, we see the count is 1 (in the left figure below), and that's due to this training sequence appearing in the n-gram datastore.
+
+![](/assets/2025-08-02-suffix-array/ngram-profile.png)
+*The n-gram profile of two selected tokens. **Left:** the training sequence appears once in the dataset; the $\infty$-gram LM prediction is sparse and always correct. **Middle:** the training sequence appears more than once in the dataset (i.e. there is duplication). **Right:** an ambiguous case where it's unclear what constitutes duplication.*
+
+If the training sequence only appears once in the dataset, it is easy to exclude: we can simply use the distribution indicated in the red box.
+**Duplication** further complicates things.
+In the middle figure above, the sequence appears more than once, and we may want to exclude all of them from the $\infty$-gram prediction.
+However, there are ambiguous cases like the right figure: there's another sequence sharing a 15-gram suffix with the current training sequence, and it's unclear whether to count this as a duplicate; if we don't remove it, the hint given to Transformer may be too strong.
+I need to come up with a heuristic, and it has to be efficient to implement (discussed in the next section).
+
+After looking at the n-gram profile of many tokens and trying a few things, I landed with the following rule: **when there's a range of values of n where the count is identical, all appearances in this range give too strong hints and should be excluded.**
+In n-gram profiles, this can be identified as a long "plateau" where the count is constant, and these bars are excluded.
+The $\infty$-gram prediction is taken from the red-boxed portion shown in the above figure.
+Some tuning shows that the length of this plateau should be at least 5.
+
+### Training efficiency
+
+**WARNING: This section is very technical but I'm being hand-wavy here. Please feel free to skip this.**
+
+Infini-LLM adds an extra step to the model pipeline: given a training sequence, we need the $\infty$-gram prediction for every token before passing things into the Transformer.
+I don't want to slow down pretraining with my stuff, otherwise the benefit would not justify the cost.
+Maintaining tokens-per-second (TPS) is a critical objective, and required a lot of engineering.
+
+On 8 A100 nodes and with a batch size of 4M tokens, the OLMo-1B model roughly trains at 2 seconds per batch.
+Fortunately, infini-gram inference doesn't need GPU, so I can pre-fetch the $\infty$-gram predictions for the next batch while the GPUs are training on the current batch.
+This allows me to parallelize, and "hide" the extra processing time behind GPU time if I can get it below 2 seconds.
+That said, running 4M infini-gram queries in 2 seconds is no joke, can't be done naively.
+
+![](/assets/2025-08-02-suffix-array/infini-llm-prefetch.png)
+*Optimizations for getting $\infty$-gram predictions. **Upper:** $\infty$-gram distributions are represented with $S$ discrete samples. **Lower:** $\infty$-gram predictions are pre-fetched and latency is hidden behind GPU training.*
+
+First, the SA index cannot live on disk anymore, they need to be loaded to RAM (and good RAM with high throughput, ideally DDR5).
+Luckily, GPU machines are usually generous in RAM, and LLM training mainly uses GPU HBM but not CPU RAM.
+For H100 nodes each with 2TB RAM, to fit the SA index (12TB for 1.7T tokens), I shard it 8 ways and distribute the SA index across 8 nodes.
+With sharding, we need to do some network communication: for the training sequences, a `gather_all()` operation to make them available to all nodes; for the $\infty$-gram predictions, an `all_to_all()` operation to aggregate the results.
+Since the gloo backend (for CPU tensors) does not support `all_to_all()`, I instead use a series of `scatter()` operations to simulate it.
+
+Next, it is extremely inefficient to represent each $\infty$-gram distribution as a 50k-dimensional vector.
+Instead, I leverage sparsity and approximate the distribution with up to $S$ discrete samples (typically I choose $S = 20$).
+This relieves network communication from being the latency bottleneck.
+
+Lastly, I reduce the number of memory accesses in $\infty$-gram queries.
+I won't elaborate the details here; on a high level, it involves leveraging some monotonicity when processing tokens from left to right in a training sequence.
+My regularization technique has this monotonicity property.
+The effect is reducing the number of memory access per token from $O(\log L \cdot \log N)$ to $O(\log N)$ amortized (where $L$ is the sequence length).
+Also, to make the sampling of next-token efficient in the presence of regularization, I had to the build SA index with all document strings *reversed* in the datastore.
+
+![](/assets/2025-08-02-suffix-array/infini-llm-efficiency.png)
+***Left:** the per-batch processing time for $\infty$-gram predictions, roughly at 1.2 seconds. **Right:** the overall training throughput; infini-LLM is almost as fast as regular Transformer pretraining.*
+
+With all these optimizations, I was able to bring the $\infty$-gram inference latency down to 1.2 seconds per batch, which fits in the 2 second target.
+The actual pretraining throughput is about 30k TPS, slightly lower than the 35k TPS in training the Transformer itself.
+This is promising, but I think can be optimized better.
+I suspect the reduced TPS is due to network saturation -- the $\infty$-gram inference also needs network communication and may be competing with GPU distributed training for bandwidth.
+
+### Evaluating the model
+
+As mentioned above, I experimented with training infini-LLM based on the settings of an internal version of OLMo-1B (codename "amberish1").
+The n-gram datastore is the model's pretraining data, Dolma v1.7, which has of 1.7T tokens.
+All other data and training settings exactly follows amberish1.
+
+![](/assets/2025-08-02-suffix-array/infini-llm-eval.png)
+*Training curves and in-loop evals of infini-LLM and baseline neural models. "amberish1": neural-only OLMo-1B. "amberish7": neural-only OLMo-7B. "infini-LLM amberish1 1.7TT": an infini-LLM version of amberish1, with 1.7T-trillion-token n-gram datastore.*
+
+The perplexity (on both training and validation) of the 1B infini-LLM is hugely better than OLMo-1B, and even better than the 7B neural-only model.
+I also got some improvement on downstream tasks, with the most notable diff on HellaSwag (+10% accuracy from OLMo-1B, and almost close to the performance of OLMo-7B).
+
+### Passing on the torch
+
+I don't see myself having bandwidth to push on the infini-LLM project in the foreseeable future, and I'd love to pass on the torch to someone interested in exploring it.
+The initial results above are very encouraging.
+My code is available in this [branch](https://github.com/allenai/OLMo/tree/liujch1998/wolf) of the OLMo repo.
+Have fun!
+
+<!-- late fusion, PPL, degenerates
+schematic figure
+data overlap, n-gram profile, regularization, duplication, reversed text
+efficiency
+loading to RAM, latency hiding
+new eval format -->
