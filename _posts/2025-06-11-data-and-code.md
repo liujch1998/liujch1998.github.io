@@ -3,25 +3,6 @@ layout: post
 title: "Treating Data as Code: from linear algebra to agentic LLMs"
 ---
 
-### Note
-
-This blog post is expanded by ChatGPT, using the following prompt:
-
-```
-I want to write a short blog post. Below are some crude high-level ideas. I want to make an analogy between agentic LLMs and computer programs / linear algebra. Can you organize them into a blog post?
-
-the magic begins when data is treated as code
-1. in linear algebra, you multiply a matrix and a vector to get a new vector. the vector is the data, the matrix is the code (that's why it's also called a "linear transformation")
-2. in computers, you execute a series of instructions to transform some data into some new data. the instructions are stored as "data" when not active, but is interpreted as code when being executed.
-3. for LLMs, the model is data when dormant; the model (and the scaffolding code) transforms some data into some new data. in an agentic framework with LLMs, these new data are sometimes treated as code and get executed, and now there are two layers: the model weights gets interpreted as code which generates data, and then these data gets interpreted as code which gets executed. This is one more layer than computer programs.
-
-now some questions arise:
-1. Do we fundamentally get more from by having two layers of re-interpreting data as code? What happens if we have more layers, or (by making this process recursive) have effectively infinite layers?
-2. What are the risks associated with having more layers?
-```
-
-****
-
 In both mathematics and computing, magic often begins when **data is treated as code**—when something passive and inert becomes something active and transformative.
 
 ### Layer 1: Linear Algebra — Data as Transformable
@@ -52,3 +33,22 @@ This raises interesting questions:
 
 * **What are the risks of deeper layers of agency?**
   Each layer introduces ambiguity and potential failure: misinterpretation, prompt injection, hallucination. With more layers, failure modes compound. Worse, agency may blur: Who’s really in control when data generates code that generates data that generates code?
+
+****
+
+### Note
+
+This blog post is expanded by ChatGPT, using the following prompt:
+
+```
+I want to write a short blog post. Below are some crude high-level ideas. I want to make an analogy between agentic LLMs and computer programs / linear algebra. Can you organize them into a blog post?
+
+the magic begins when data is treated as code
+1. in linear algebra, you multiply a matrix and a vector to get a new vector. the vector is the data, the matrix is the code (that's why it's also called a "linear transformation")
+2. in computers, you execute a series of instructions to transform some data into some new data. the instructions are stored as "data" when not active, but is interpreted as code when being executed.
+3. for LLMs, the model is data when dormant; the model (and the scaffolding code) transforms some data into some new data. in an agentic framework with LLMs, these new data are sometimes treated as code and get executed, and now there are two layers: the model weights gets interpreted as code which generates data, and then these data gets interpreted as code which gets executed. This is one more layer than computer programs.
+
+now some questions arise:
+1. Do we fundamentally get more from by having two layers of re-interpreting data as code? What happens if we have more layers, or (by making this process recursive) have effectively infinite layers?
+2. What are the risks associated with having more layers?
+```
