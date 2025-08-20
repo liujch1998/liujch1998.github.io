@@ -5,8 +5,11 @@ title: "Publications"
 
 ## Preprints
 
+## Peer-Reviewed Papers
+
 [Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index](https://arxiv.org/pdf/2506.12229) \\
 Hao Xu, **Jiacheng Liu**, Yejin Choi, Noah A. Smith, Hannaneh Hajishirzi \\
+EMNLP 2025 (Main Conference) \\
 [[Arxiv](https://arxiv.org/pdf/2506.12229)]
 [[Project Page](https://infini-gram-mini.io/)]
 [[Web Interface](https://huggingface.co/spaces/infini-gram-mini/infini-gram-mini)]
@@ -14,8 +17,6 @@ Hao Xu, **Jiacheng Liu**, Yejin Choi, Noah A. Smith, Hannaneh Hajishirzi \\
 [[Code](https://github.com/xuhaoxh/infini-gram-mini)]
 [[Documentation](https://infini-gram-mini.readthedocs.io)]
 [[Contamination Bulletin](https://huggingface.co/spaces/infini-gram-mini/Benchmark-Contamination-Monitoring-System)]
-
-## Peer-Reviewed Papers
 
 [OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens](https://arxiv.org/pdf/2504.07096) \\
 **Jiacheng Liu**, Taylor Blanton, Yanai Elazar, Sewon Min, YenSung Chen, Arnavi Chheda-Kothary, Huy Tran, Byron Bischoff, Eric Marsh, Michael Schmitz, Cassidy Trier, Aaron Sarnat, Jenna James, Jon Borchardt, Bailey Kuehl, Evie Cheng, Karen Farley, Sruthi Sreeram, Taira Anderson, David Albright, Carissa Schoenick, Luca Soldaini, Dirk Groeneveld, Rock Yuren Pang, Pang Wei Koh, Noah A. Smith, Sophie Lebrecht, Yejin Choi, Hannaneh Hajishirzi, Ali Farhadi, Jesse Dodge \\
