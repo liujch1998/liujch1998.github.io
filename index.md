@@ -61,7 +61,7 @@ Personal:
 
 See my full list of publications [here](/publications.md).
 
-[OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens](https://arxiv.org/pdf/2504.07096) \\
+[**OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens**](https://arxiv.org/pdf/2504.07096) \\
 **Jiacheng Liu**, Taylor Blanton, Yanai Elazar, Sewon Min, YenSung Chen, Arnavi Chheda-Kothary, Huy Tran, Byron Bischoff, Eric Marsh, Michael Schmitz, Cassidy Trier, Aaron Sarnat, Jenna James, Jon Borchardt, Bailey Kuehl, Evie Cheng, Karen Farley, Sruthi Sreeram, Taira Anderson, David Albright, Carissa Schoenick, Luca Soldaini, Dirk Groeneveld, Rock Yuren Pang, Pang Wei Koh, Noah A. Smith, Sophie Lebrecht, Yejin Choi, Hannaneh Hajishirzi, Ali Farhadi, Jesse Dodge \\
 ACL 2025 System Demonstrations Track **(Best Demo Award)** \\
 [[Arxiv](https://arxiv.org/pdf/2504.07096)]
@@ -72,7 +72,18 @@ ACL 2025 System Demonstrations Track **(Best Demo Award)** \\
 [[Trailer Video](https://www.youtube.com/watch?v=A71RSAxjVqc)]
 [[Demo Video](https://www.youtube.com/watch?v=wyLRWza_v9M)]
 
-[Infini-gram: Scaling Unbounded n-gram Language Models to a Trillion Tokens](https://openreview.net/pdf?id=u2vAyMeLMm) \\
+[**Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index**](https://arxiv.org/pdf/2506.12229) \\
+Hao Xu, **Jiacheng Liu**, Yejin Choi, Noah A. Smith, Hannaneh Hajishirzi \\
+EMNLP 2025 (Main Conference) \\
+[[Arxiv](https://arxiv.org/pdf/2506.12229)]
+[[Project Page](https://infini-gram-mini.io/)]
+[[Web Interface](https://huggingface.co/spaces/infini-gram-mini/infini-gram-mini)]
+[[API Endpoint](https://api.infini-gram-mini.io/)]
+[[Code](https://github.com/xuhaoxh/infini-gram-mini)]
+[[Documentation](https://infini-gram-mini.readthedocs.io)]
+[[Contamination Bulletin](https://huggingface.co/spaces/infini-gram-mini/Benchmark-Contamination-Monitoring-System)]
+
+[**Infini-gram: Scaling Unbounded n-gram Language Models to a Trillion Tokens**](https://openreview.net/pdf?id=u2vAyMeLMm) \\
 **Jiacheng Liu**, Sewon Min, Luke Zettlemoyer, Yejin Choi, Hannaneh Hajishirzi \\
 COLM 2024 (Oral Spotlight, 2%) \\
 [[Arxiv](https://arxiv.org/pdf/2401.17377.pdf)]
@@ -83,20 +94,20 @@ COLM 2024 (Oral Spotlight, 2%) \\
 [[Code](https://github.com/liujch1998/infini-gram)]
 [[Documentation](https://infini-gram.readthedocs.io)]
 
-[Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback](https://arxiv.org/pdf/2406.09279) \\
+[**Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback**](https://arxiv.org/pdf/2406.09279) \\
 Hamish Ivison, Yizhong Wang, **Jiacheng Liu**, Zeqiu Wu, Valentina Pyatkin, Nathan Lambert, Noah A Smith, Yejin Choi, Hannaneh Hajishirzi \\
 NeurIPS 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2406.09279)]
 [[Code](https://github.com/hamishivi/EasyLM)]
 [[Models](https://huggingface.co/collections/allenai/tulu-v25-suite-66676520fd578080e126f618)]
 
-[Don't throw away your value model! Generating more preferable text with Value-Guided Monte-Carlo Tree Search decoding](https://openreview.net/pdf?id=kh9Zt2Ldmn) \\
+[**Don't throw away your value model! Generating more preferable text with Value-Guided Monte-Carlo Tree Search decoding**](https://openreview.net/pdf?id=kh9Zt2Ldmn) \\
 **Jiacheng Liu**, Andrew Cohen, Ramakanth Pasunuru, Yejin Choi, Hannaneh Hajishirzi, Asli Celikyilmaz \\
 COLM 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2309.15028.pdf)]
 [[Code](https://github.com/liujch1998/ppo-mcts)]
 
-[Vera: A General-Purpose Plausibility Estimation Model for Commonsense Statements](https://aclanthology.org/2023.emnlp-main.81.pdf) \\
+[**Vera: A General-Purpose Plausibility Estimation Model for Commonsense Statements**](https://aclanthology.org/2023.emnlp-main.81.pdf) \\
 **Jiacheng Liu**, Wenya Wang, Dianzhuo Wang, Noah A. Smith, Yejin Choi, Hannaneh Hajishirzi \\
 EMNLP 2023 (Main Conference, Oral) \\
 [[Arxiv](https://arxiv.org/pdf/2305.03695.pdf)]
@@ -105,7 +116,7 @@ EMNLP 2023 (Main Conference, Oral) \\
 [[Demo](https://huggingface.co/spaces/liujch1998/vera)]
 [[Dataset](https://huggingface.co/datasets/liujch1998/vera_contrib)]
 
-[Generated Knowledge Prompting for Commonsense Reasoning](https://aclanthology.org/2022.acl-long.225.pdf) \\
+[**Generated Knowledge Prompting for Commonsense Reasoning**](https://aclanthology.org/2022.acl-long.225.pdf) \\
 **Jiacheng Liu**, Alisa Liu, Ximing Lu, Sean Welleck, Peter West, Ronan Le Bras, Yejin Choi, Hannaneh Hajishirzi \\
 ACL 2022 (Main Conference) \\
 [[Arxiv](https://arxiv.org/pdf/2110.08387.pdf)]
