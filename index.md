@@ -2,13 +2,13 @@
 layout: home
 ---
 
-<img src='/assets/Profile.png' width=250 style="float: right;">
+<img src='/assets/Purple.jpg' width=250 style="float: right;">
 
-I am a `(Now() - 04/2021).ceil().ordinal()` year PhD student studying AI and language models at University of Washington.
+I am a `(Now() - 04/2021).ceil().ordinal()` year PhD student studying AI and LLMs at University of Washington.
 I am fortunate to be advised by Prof. Yejin Choi and Prof. Hanna Hajishirzi.
-I am also a student researcher at the Allen Institute for AI (Ai2).
 
-My current research topics are inspecting massive text corpora, training data attribution, LM pretraining, and scaling laws.
+My current research focus is inspecting and curating massive text corpora for LLM pretraining.
+I also work on training data attribution, LLM pretraining, and scaling laws for LLMs.
 During my PhD, I have worked on commonsense knowledge generation and verification, automated theorem proving, RLHF, and text decoding.
 
 Previously, I received B.S. in Computer Science from University of Illinois at Urbana-Champaign, where I worked with Prof. Julia Hockenmaier.
