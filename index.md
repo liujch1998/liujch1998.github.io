@@ -40,7 +40,7 @@ Personal:
 
 # News
 
-<!-- * (2025.11) Honored to be selected for the 2025 cohort of [Rising Stars in Data Science](https://datascience.stanford.edu/programs/rising-stars-data-science) -->
+* (2025.11) Honored to be selected for the 2025 cohort of [Rising Stars in Data Science](https://datascience.stanford.edu/programs/rising-stars-data-science/2025-rising-stars-cohort)
 * (2025.09) Talk at BAIR, UC Berkeley
 * (2025.07) **OLMoTrace** received the Best Demo Award at ACL 2025! 🏆
 * (2025.07) Talk at TPC25 (Trillion Parameter Consortium)

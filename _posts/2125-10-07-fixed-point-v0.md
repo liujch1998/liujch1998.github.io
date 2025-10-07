@@ -1,0 +1,352 @@
+---
+layout: post
+title: "Defying Transformers: Searching for 'Fixed Points' of Pretrained LLMs"
+---
+
+Transformers have made transformative transformations to the AI landscape.
+Are there things that cannot be transformed by Transformers?
+
+I want to find inputs whose value is preserved after making a forward pass with a Transformer model.
+Mathematically, this is about finding **"fixed points"**, or **"FPs"**, of functions.
+A value $x$ is an FP of a function $f$ if $x = f(x)$.
+If we view the forward pass of a Transformer as a function $T$ that takes an input sequence $[x_1, x_2, ..., x_n]$ and produces output sequence $[y_1, y_2, ..., y_n] = T([x_1, x_2, ..., x_n])$, our task is to find the FP(s) of $T$.
+
+One crucial assumption we want to make is $x_1 = x_2 = ... = x_n$.
+This is because when decoding from Transformers, we always feed the output of the current step as the input of the next step, which means $y_1 = x_2, y_2 = x_3, ...$ etc.
+Meanwhile, by definition of fixed points, we have $y_1 = x_1, y_2 = x_2, ...$ etc.
+Together they imply $x_1 = x_2 = ... = x_n$.
+Therefore, we are looking for an $x$ where $[x, x, ..., x] = T([x, x, ..., x])$ for some sequence length $n$.
+
+<!-- ![](/assets/2025-09-15-fixed-point/fp.png)
+***Figure 1:** "Fixed points" of Transformers preserve their values when passed into Transformers.* -->
+<div style="width:60%; margin: 0 auto; text-align: center;">
+  <img src="/assets/2025-09-15-fixed-point/fp.png" style="max-width: 100%; height: auto;">
+  <p style="margin-top: 10px; font-style: italic;"><strong>Figure 1:</strong> "Fixed points" of Transformers preserve their values when passed into Transformers.</p>
+</div>
+
+**Reduction to single-element sequence.**
+Next, we make the observation that, with modern LLMs, as long as we find an $x$ such that $[x] = T([x])$, we have $[x, x, ..., x] = T([x, x, ..., x])$ for arbitrary sequence length $n$.
+By "modern LLMs", I mean those using RoPE for positional encoding.
+In constrast, the more traditional Transformers that add positional encodings as part of the input embeddings do not have this nice property.
+
+*Proof.*
+First, consider the traditional Transformers (Figure 2, left).
+At each position, a different positional embedding vector is added element-wise to the input token embedding.
+Even if we found an $x$ such that if we input it at position 0, $T([x + p_0]) = [x]$, at the next position we will be transforming $[x + p_1]$ (and due to the self-attention mechanism, we will be jointly transforming $[x + p_0, x + p_1]$), and the Transformer may produce a different output $x' \neq x$.
+Thus $x$ is not an FP over arbitrary sequence length.
+
+Now consider Transformers with RoPE (Figure 2, right).
+<!-- We use proof by induction.
+Say we already have $[x] = T([x])$ as the base case.
+If we have $[x, x, ..., x] = T([x, x, ..., x])$ for sequence length $n$, we show that this equality holds for sequence length $(n+1)$ by showing that the output at the last position (i.e. position $n$) will still be $x$.
+This is because all intermediate hidden states in the Transformer's forward pass are *identical* across all positions.
+Specifically, consider a self-attention block.
+RoPE is applied to transform the $Q$ and $K$ vectors, but the $V$ vectors are identical across all positions (as long as the input hidden states to this self-attention block are identical acorss all positions).
+Therefore, no matter what the attention pattern looks like, the output hidden states of this self-attention block,
+$$
+o_n = \sum_{j}{a_j v_j} = \sum_{j}{a_j v_0} = v_0
+$$
+are identical across all positions. (I omitted the out linear transformation for simplicity.)
+This completes the induction. -->
+We will show that the hidden states in the same layer are identical across all positions.
+And for that it'd suffice to show that as long as the input hidden states to a layer are identical across all positions, the output hidden states of that layer would also be identical across all positions.
+This is trivial for non-attention operations (e.g. FFN, LayerNorm/RMSNorm, residual connection).
+For self-attention blocks, RoPE is applied to transform the $Q$ and $K$ vectors in a position-dependent manner, but the $V$ vectors are identical across all positions (because the input hidden states to this self-attention block are identical acorss all positions).
+Therefore, no matter what the attention pattern looks like, the output hidden state of this self-attention block at position $i$,
+
+$$
+o_i = \sum_{j}{a_j v_j} = \sum_{j}{a_j v_0} = v_0
+$$
+
+is a constant and thus identical across all positions. (I omitted the out linear transformation for simplicity.)
+Now we have shown that the hidden states in the same layer are identical across all positions, the final outputs (which is some transformation the hidden states of the final layer) are identical across all positions, and thus all equal to $x$.
+This completes the proof.
+
+![](/assets/2025-09-15-fixed-point/rope.png)
+***Figure 2.** **Left:** Tranditional Transformers with positional encodings as part of the input; $[x] = T([x])$ does not guarantee $[x, x, ..., x] = T([x, x, ..., x])$. **Right:** Modern Transformers with RoPE; $[x] = T([x])$ implies $[x, x, ..., x] = T([x, x, ..., x])$ for arbitrary sequence length.*
+
+**Ensuring determinism in Transformers.**
+Some Transformers have dropout layers, which give non-deterministic results in training mode.
+To ensure determinism, we set the models in eval mode (`model.eval()`).
+
+**Are these FPs discrete tokens or continuous vectors?**
+You may have noticed that, so far I haven't really said what these $x$'s are.
+This is where we branch and consider two possibilities: discrete tokens and continuous vectors.
+I will discuss them in the next two sections, respectively.
+
+## Fixed points among discrete tokens
+
+Typically, when we use Transformers, we input some discrete tokens (the prompt), and decode discrete tokens one-by-one.
+Finding discrete token FPs is interesting because it's related to the repetition degeneration of LLMs: If you give a Transformer such a FP token $x$, it would keep decoding $x$ indefinitely.
+
+<!-- ![](/assets/2025-09-15-fixed-point/discrete.png)
+*Discrete token FPs. If a Transformer receives token $t$ and outputs token $t$ (under greedy decoding), it will keep decoding token $t$ indefinitely.* -->
+<div style="width:60%; margin: 0 auto; text-align: center;">
+  <img src="/assets/2025-09-15-fixed-point/discrete.png" style="max-width: 100%; height: auto;">
+  <p style="margin-top: 10px; font-style: italic;">Discrete token FPs. If a Transformer receives token $t$ and outputs token $t$ (under greedy decoding), it will keep decoding token $t$ indefinitely.</p>
+</div>
+
+There's one nuance: Transformers output a distribution over the vocabulary -- a continuous vector that is in a difference space than the input discrete token.
+One apparent way to resolve this is to assume we're using **greedy decoding**: taking the argmax token from the output distribution.
+While there are other decoding algorithms, they are stochastic and thus not suitable for defining FPs.
+
+The algorithm for finding such FP tokens is simple: We enumerate all tokens in the vocabulary, and for each token $x$, input it to the Transformer and check if $x$ has the biggest probability mass in the output distribution.
+Code sketch:
+```python
+fps = []
+with torch.no_grad():
+    for x in range(tokenizer.vocab_size):
+        logits = model(input_ids=torch.tensor([[x]], dtype=torch.long)).logits[0, -1, :] # (V)
+        if logits.argmax().item() == x:
+            fps.append(x)
+```
+
+I tested some open models up to 14B in the following three families: OLMo 2, Qwen 3, and Gemma 3 (both their base version and instruct version).
+Below is the number of discrete token FPs of each model:
+
+| Model | Base | Inst |
+|-------|-----:|-----:|
+| olmo2-1b | 54 | 25 |
+| olmo2-7b | 101 | 15 |
+| olmo2-13b | 95 | 36 |
+| qwen3-0.6b | 160 | 3 |
+| qwen3-1.7b | 925 | 10 |
+| qwen3-4b | 651 | 13 |
+| qwen3-8b | 802 | 20 |
+| qwen3-14b | 866 | 8 |
+| gemma3-270m | 111828 | 60086 |
+| gemma3-1b | 217240 | 118373 |
+
+A few observations:
+1. All models tested have discrete token FPs. Base models have more FPs than their corresponding instruct models. (Possibly related: base models tend to degenerate and repeat more than instruct models.)
+1. Bigger models tend to have more FPs. (Quite counter-intuitive!)
+1. Gemma 3 1B has way more FPs than similar-sized OLMo 2 and Qwen 3 counterparts. In fact, the majority of tokens in Gemma3-1B-Base's vocabulary ($V = 262k$) are FPs!
+
+Looking a bit closer into these FPs, we see that the output probability assigned to the FP tokens can vary a lot.
+It can be very close to 1.0 (a spiky distribution), very close to 0.0 (a nearly-uniform distribution), or something in the middle.
+For example, below are the top-3 and bottom-3 FP tokens of Qwen3-8B-Instruct:
+<!-- ![](/assets/2025-09-15-fixed-point/qwen3-8b-inst-top3.png)
+![](/assets/2025-09-15-fixed-point/qwen3-8b-inst-bottom3.png) -->
+<div style="display: flex; justify-content: space-around; align-items: flex-start; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; text-align: center;">
+    <img src="/assets/2025-09-15-fixed-point/qwen3-8b-inst-top3.png" style="max-width: 100%; height: auto;">
+    <p style="margin-top: 10px; font-style: italic;">Top-3 FP tokens</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="/assets/2025-09-15-fixed-point/qwen3-8b-inst-bottom3.png" style="max-width: 100%; height: auto;">
+    <p style="margin-top: 10px; font-style: italic;">Bottom-3 FP tokens</p>
+  </div>
+</div>
+
+Many FP tokens make intuitive sense.
+Tokens like `????`, `666`, `hhh`, `blah`, and `\n \n` -- you'd expect them to appear repetitively in many low-quality training documents.
+One nice thing with fully-open LLMs like OLMo 2 is that we can inspect the training data (with [infini-gram](https//infini-gram.io/demo) search) to verify this.
+For example, `blah` is an FP token of OLMo2-13B-Base, and we can find 66k occurrences of its 10-repetition:
+![](/assets/2025-09-15-fixed-point/ig_blah.png)
+
+For some other tokens, it's not obvious why they became FPs, and searching in data can shed some light.
+The top-1 FP token of OLMo2-13B-Instruct is `\u00c1` (which is latin letter `Á` with an acute accent).
+String `ÁÁÁÁÁÁÁÁÁÁ` appears 25k times in this model's full training data (mostly from the Flan set used in mid-training, for some mysterious reasons):
+![](/assets/2025-09-15-fixed-point/ig_u00c1.png)
+
+Another top FP token among OLMo 2 models is `ffi`, which appears to be due to incorrect parsing of equations in the pes2o dataset (Semantic Scholar papers) used in pre-training the OLMo 2 family:
+![](/assets/2025-09-15-fixed-point/ig_ffi.png)
+
+I also noticed that LLMs in the same model family share many common FP tokens.
+As an example, `\u00c1` is an FP token for all OLMo 2 models I tested.
+This corroborates with my intuition that FPs are closely tied to the training data.
+FP tokens seem promising to be used to **identify problematic training data**, and to **infer some training data of open-weight LLMs**.
+
+## Fixed points in the embedding space
+
+Now we move on to consider continuous vector FPs.
+Transformers embed the input discrete tokens into vectors $x \in \mathbb{R}^D$, which are subsequently sent into the Transformer layers.
+We can try to find FPs in this embedding space $\mathbb{R}^D$.
+
+<!-- ![](/assets/2025-09-15-fixed-point/continuous.png)
+*Continuous FPs in the embedding space. The FPs are not necessarily the exact embedding of some particular token, but is a weighted mixture of the embeddings of many tokens in the vocabulary.* -->
+<div style="width:60%; margin: 0 auto; text-align: center;">
+  <img src="/assets/2025-09-15-fixed-point/continuous.png" style="max-width: 100%; height: auto;">
+  <p style="margin-top: 10px; font-style: italic;">Continuous FPs in the embedding space. The FPs are not necessarily the exact embedding of any particular token, but is a weighted mixture of the embeddings of many tokens in the vocabulary.</p>
+</div>
+
+The Transformer model outputs a distribution $y \in \Delta^V$ over the vocabulary.
+Now the good news is, we no longer need to assume greedy decoding, which can look like a compromise.
+But we still need to convert this distribution into the embedding space.
+One apparent way is to take a weighted mixture of the token embeddings according to this distribution.
+Mathematically, this would be simply multiplying this distribution vector $y$ with the embedding matrix $E$: $y E \in \mathbb{R}^D$.
+We can think of the transformation function $T$ associated with the Transformer model as $T(x) := y E$.
+The continuous FPs we're looking for should satisfy $x = T(x) = y E$.
+
+Below I will discuss two ways for finding FPs in this embedding space: (1) **fixed-point iteration**, and (2) **gradient descent**.
+
+### Fixed-point iteration
+
+Fixed-point iteration is a simple method for finding the FP of a function $f$ with the same domain and codomain.
+Starting from an arbitrary point $x_0$, it iteratively computes $x_{n+1} = f(x_n)$ until the sequence converges.
+The final obtained $x_N$ ($N$ as determined by some stopping criteria) is an FP of $f$.
+
+**A bit of theory.**
+Under a few conditions, this method guarantees convergence to an FP. (See [Banach fixed-point theorem](https://en.wikipedia.org/wiki/Banach_fixed-point_theorem).)
+The conditions are: (1) $f$ is a continuous function, and (2) $f$ is a [contraction mapping](https://en.wikipedia.org/wiki/Contraction_mapping), roughly meaning any perturbation on the input cannot shift the output by a distance larger than the magnitude of the perturbation itself.
+In addition, under these conditions, the FP of function $f$ is *unique*.
+
+These two conditions are generally not met by the Transformer function $T(x)$.
+For (1), there will always be numerical errors in floating-point operations.
+For (2), we have no guarantee that an arbitrary pretrained Transformer represents a contraction mapping.
+In fact, as I will show later, we can often find multiple vector FPs for a given LLM, implying that at least one condition is broken.
+
+That said, I still gave it a shot.
+Here's a sketch of the code:
+```python
+x = torch.nn.Parameter(torch.randn(D, dtype=torch.float32) * model.config.initializer_range) # (D)
+while loss > EPS:
+    with torch.no_grad():
+        logits = model(inputs_embeds=x[None, None, :]).logits[0, -1, :] # (V)
+        probs = F.softmax(logits) # (V)
+        y = probs @ embed_matrix # (D)
+        loss = torch.norm(y - x)
+        x = y
+```
+
+**Experiment setup.**
+I keep iterating until the L2 distance between the input and output falls below a threshold $\varepsilon$, and in practice I use $\varepsilon = 10^{-6}$.
+Since the outcome depends on the random initial $x$, I run each LLM 10 times with different seeds and aggregate results.
+In some runs, $\{x_n\}$ doesn't converge, and I removed those results.
+If a found FP is within an L2 distance of $10^{-4}$ from another FP, I say that these two FPs are identical and only keep one.
+
+I tested on the same set of open-weight LLMs as in the last section.
+Below is the number of continuous vector FPs found by fixed-point iteration for each model:
+
+| Model | Base | Inst |
+|-------|-----:|-----:|
+| olmo2-1b | 0 | 2 |
+| olmo2-7b | 1 | 1 |
+| olmo2-13b | 1 | 1 |
+| qwen3-0.6b | 1 | 1 |
+| qwen3-1.7b | 1 | 1 |
+| qwen3-4b | 1 | 1 |
+| qwen3-8b | 2 | 2 |
+| qwen3-14b | 1 | 0 |
+| gemma3-270m | 1 | 1 |
+| gemma3-1b | 0 | 0 |
+
+A few observations:
+1. For most models, fixed-point iteration can find either 1 or 2 FP vectors. In case of a few models, the method fails to find any. Note that this may not be all the vector FPs: some might have a small range of initialization $x_0$ that can converge to them, and we might be missing them due to not having more trials. Doing 10 trials should have covered the most "popular" FP vectors.
+1. The number of FP vectors is much fewer than FP tokens. I suspect this is due to the definition of FP becoming more strict with the removal of greedy decoding.
+1. When fixed-point iteration converges, it typically converges within a few dozen steps. I ran all experiments up to 10,000 steps, and found that if it doesn't converge within 200 steps, it won't converge even given more steps.
+
+**Token compositions of FP vectors.**
+An FP vector can be viewed as a weighted mixture of tokens in the vocabulary.
+To get a more intuitive understanding of these FP vectors, we can look at the top-contributing tokens in this mixture.
+For example, the FP vector of OLMo2-7B-Instruct is 97% from the embedding of token `<` and 3% contributed by other tokens (and in fact, `<` is a discrete token FP of this model).
+Meanwhile, some other FP vectors have quite "flat" mixtures.
+The top token (` Sudoku`) only contributed 2.5% to the FP vector of Qwen3-0.6B-Base.
+<!-- ![](/assets/2025-09-15-fixed-point/iteration-olmo2-7b-inst.png)
+![](/assets/2025-09-15-fixed-point/iteration-qwen3-0.6b-base.png) -->
+<div style="display: flex; justify-content: space-around; align-items: flex-start; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; text-align: center;">
+    <img src="/assets/2025-09-15-fixed-point/iteration-olmo2-7b-inst.png" style="max-width: 100%; height: auto;">
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="/assets/2025-09-15-fixed-point/iteration-qwen3-0.6b-base.png" style="max-width: 100%; height: auto;">
+  </div>
+</div>
+
+**Numerical errors & "unstable" FP vectors.**
+Due to floating point errors, the FP vectors we found are not strict FPs.
+Following our stopping criteria, the input and output vectors may have an L2 distance up to $10^{-6}$.
+Running more iteration steps could not further reduce this error down to 0.0.
+This creates a problem for the reduction we made at the beginning of this post -- from solving $T([x, x, ... x]) = [x, x, ..., x]$ to solving $T([x]) = [x]$.
+With autoregressive decoding, the FP vectors might diverge due to the numerical errors.
+
+In practice, I observed two types of FP vectors -- "stable" ones where the error is bounded by a small value during autoregressive decoding, and "unstable" ones where the error blows up.
+Most of the FP vectors found above are stable, with one exception from Qwen3-1.7B-Instruct.
+Below are examples of stable and unstable FPs.
+In each example, the `rollout_dist_by_l` indicates for each decoding sequence length $l$, the L2 distance between the final output vector at the last position and the initially-found FP vector; `rollout_dist_max` is the maximum of such distances over $l = 1 ... 100$.
+
+<!-- ![](/assets/2025-09-15-fixed-point/numerical-stable.png)
+*The FP vector found for Qwen3-1.7B-Base is a **stable** FP. The max error over decoding 100 tokens is in the order of $10^{-6}$.*
+
+![](/assets/2025-09-15-fixed-point/numerical-unstable.png)
+*The FP vector found for Qwen3-1.7B-Instruct is a **stable** FP. Although the error on decoding the first token is low ($2.09 \times 10^{-6}$), the error compounded over autoregressive decoding, and the max error over decoding 100 tokens is above 1.0.* -->
+
+<div style="display: flex; justify-content: space-around; align-items: flex-start; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1; text-align: center;">
+    <img src="/assets/2025-09-15-fixed-point/numerical-stable.png" style="max-width: 100%; height: auto;">
+    <p style="margin-top: 10px; font-style: italic;">The FP vector found for Qwen3-1.7B-Base is a <strong>stable</strong> FP. The max error over decoding 100 tokens is in the order of $10^{-6}$.</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="/assets/2025-09-15-fixed-point/numerical-unstable.png" style="max-width: 100%; height: auto;">
+    <p style="margin-top: 10px; font-style: italic;">The FP vector found for Qwen3-1.7B-Instruct is an <strong>unstable</strong> FP. Although the error on decoding the first token is low ($2.09 \times 10^{-6}$), the error compounded over autoregressive decoding, and the max error over decoding 100 tokens is above 1.0.</p>
+  </div>
+</div>
+
+### Gradient descent
+
+Gradient descent is a common way to optimize continuous values towards a target.
+In our case of finding FPs, our target is to make the output $T(x)$ match the input $x$.
+We can thus define a loss to optimize for, e.g., an L2 distance loss:
+$$
+L_x = || x - T(x) ||_2
+$$
+and use gradient descent to optimize this loss.
+Contrary to typically LLM training where the Transformer parameters $\theta$ are optimized, here we fix $\theta$ and optimize the input vector $x$.
+
+**Gradient descent as a generalization of fixed-point iteration.**
+Consider a scenario where we use a squared L2 loss and do not backprop the gradient through $T(x)$, i.e., $L_x = \Big( x - \text{detach} \big( T(x) \big) \Big) ^2$.
+Then we have gradient $\partial{L} / \partial{x} = 2 (x - T(x)) $.
+If we use learning rate $\eta = 0.5$, then the gradient update step would reduce to $x \leftarrow x - \eta \cdot \partial{L} / \partial{x} = x - 0.5 \cdot 2 (x - T(x)) = T(x)$, which is identical to fixed-point iteration.
+
+In practice, I found detaching $T(x)$ gives better and faster convergence.
+I use L2 distance loss.
+I use AdamW optimizer with initial LR $10^{-2}$ and a `ReduceLROnPlateau` scheduler.
+For each LLM, I run 10 times with different random initialization of $x$.
+Here's a sketch of the code:
+```python
+x = torch.nn.Parameter(torch.randn(D, dtype=torch.float32) * model.config.initializer_range) # (D)
+lr = 1e-2
+while lr > 1e-9:
+    with torch.no_grad():
+        logits = model(inputs_embeds=x[None, None, :]).logits[0, -1, :] # (V)
+        probs = F.softmax(logits) # (V)
+        y = probs @ embed_matrix # (D)
+    loss = torch.norm(y - x)
+    loss.backward()
+    optimizer.step()
+    lr = scheduler.step()
+```
+
+Below is the number of continuous vector FPs found by fixed-point iteration for each model: (the number in parentheses is difference with the number of FP vectors found in fixed-point iteration)
+
+| Model | Base | Inst |
+|-------|:-----|:-----|
+| olmo2-1b | 3 (+3) | 5 (+3) |
+| olmo2-7b | 1 | 1 |
+| olmo2-13b | 1 | 1 |
+| qwen3-0.6b | 1 | 1 |
+| qwen3-1.7b | 2 (+1) | 1 |
+| qwen3-4b | 2 (+1) | 1 |
+| qwen3-8b | 2 | 5 (+3) |
+| qwen3-14b | 2 (+1) | 3 (+3) |
+| gemma3-270m | 1 | 1 |
+| gemma3-1b | 0 | 1 (+1) |
+
+A few observations:
+1. Gradient descent finds more vector FPs than fixed-point iteration. This corroborates my previous note that fixed-point iteration may not find all FPs with limited trials.
+1. That said, the vector FPs found by gradient descent may not be complete, either. While most vector FPs found by fixed-point descent are also found by gradient descent, there are a few exceptions.
+1. The additional FP vectors found by gradient descent are a mixture of stable and unstable FPs.
+
+<!-- MSE loss vs L2 loss -->
+<!-- bf16 vs fp32 -->
+<!-- batching gives different results -->
+
+## Post mortem
+
+This is one of my pet projects.
+I had the initial idea more than 4 years ago, right after I started my PhD.
+Back then, I did some experiments but it didn't work because LLMs were largely on additive position encodings.
+Later, RoPE was proposed and got widely adopted in mordern LLMs, so I found time to revisit this idea.
+I did this purely for fun and intellectual curiosity, and it happens to bring some unexpected findings.
+
+If this inspires some ideas in you, please feel free to reach out and I'm happy to chat!
