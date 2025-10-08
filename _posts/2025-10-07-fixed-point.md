@@ -333,3 +333,5 @@ Later, RoPE was proposed and got widely adopted in mordern LLMs, so I found time
 I did this purely for fun and intellectual curiosity, and it happens to bring some unexpected findings.
 
 If this inspires some ideas in you, please feel free to reach out and I'm happy to chat!
+
+Code is available [here](https://github.com/liujch1998/llm-fixed-points).
