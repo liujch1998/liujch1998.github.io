@@ -41,10 +41,12 @@ Personal:
 # News
 
 * (2025.11) Honored to be selected for the 2025 cohort of [Rising Stars in Data Science](https://datascience.stanford.edu/programs/rising-stars-data-science/2025-rising-stars-cohort)
+* (2025.11) **Infini-gram mini** received the Best Paper Award at EMNLP 2025! 🏆
 * (2025.09) Talk at BAIR, UC Berkeley
 * (2025.07) **OLMoTrace** received the Best Demo Award at ACL 2025! 🏆
 * (2025.07) Talk at TPC25 (Trillion Parameter Consortium)
 * (2025.07) Talk at Stanford NLP
+* (2025.06) Introducing [**infini-gram mini**](https://arxiv.org/pdf/2506.12229): an even more compact version of infini-gram, enabling search in Internet-scale text corpora with limited budget.
 * (2025.06) Talk at IBM Research
 * (2025.05) Talk at UCSD
 * (2025.04) Introducing [**OLMoTrace**](https://arxiv.org/pdf/2504.07096): tracing LLM outputs back into their multi-trillion-token training data in real time. Now available on [Ai2 Playground](https://playground.allenai.org)
@@ -63,7 +65,18 @@ Personal:
 
 See my full list of publications [here](/publications.md).
 
-[**OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens**](https://arxiv.org/pdf/2504.07096) \\
+[**Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index**](https://aclanthology.org/2025.emnlp-main.1268.pdf) \\
+Hao Xu, **Jiacheng Liu**, Yejin Choi, Noah A. Smith, Hannaneh Hajishirzi \\
+EMNLP 2025 (Main Conference, **Best Paper Award**) \\
+[[Arxiv](https://arxiv.org/pdf/2506.12229)]
+[[Project Page](https://infini-gram-mini.io/)]
+[[Web Interface](https://huggingface.co/spaces/infini-gram-mini/infini-gram-mini)]
+[[API Endpoint](https://api.infini-gram-mini.io/)]
+[[Code](https://github.com/xuhaoxh/infini-gram-mini)]
+[[Documentation](https://infini-gram-mini.readthedocs.io)]
+[[Contamination Bulletin](https://huggingface.co/spaces/infini-gram-mini/Benchmark-Contamination-Monitoring-System)]
+
+[**OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens**](https://aclanthology.org/2025.acl-demo.18.pdf) \\
 **Jiacheng Liu**, Taylor Blanton, Yanai Elazar, Sewon Min, YenSung Chen, Arnavi Chheda-Kothary, Huy Tran, Byron Bischoff, Eric Marsh, Michael Schmitz, Cassidy Trier, Aaron Sarnat, Jenna James, Jon Borchardt, Bailey Kuehl, Evie Cheng, Karen Farley, Sruthi Sreeram, Taira Anderson, David Albright, Carissa Schoenick, Luca Soldaini, Dirk Groeneveld, Rock Yuren Pang, Pang Wei Koh, Noah A. Smith, Sophie Lebrecht, Yejin Choi, Hannaneh Hajishirzi, Ali Farhadi, Jesse Dodge \\
 ACL 2025 System Demonstrations Track **(Best Demo Award)** \\
 [[Arxiv](https://arxiv.org/pdf/2504.07096)]
@@ -73,17 +86,6 @@ ACL 2025 System Demonstrations Track **(Best Demo Award)** \\
 [[Twitter](https://x.com/liujc1998/status/1909963236864299068)]
 [[Trailer Video](https://www.youtube.com/watch?v=A71RSAxjVqc)]
 [[Demo Video](https://www.youtube.com/watch?v=wyLRWza_v9M)]
-
-[**Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index**](https://arxiv.org/pdf/2506.12229) \\
-Hao Xu, **Jiacheng Liu**, Yejin Choi, Noah A. Smith, Hannaneh Hajishirzi \\
-EMNLP 2025 (Main Conference) \\
-[[Arxiv](https://arxiv.org/pdf/2506.12229)]
-[[Project Page](https://infini-gram-mini.io/)]
-[[Web Interface](https://huggingface.co/spaces/infini-gram-mini/infini-gram-mini)]
-[[API Endpoint](https://api.infini-gram-mini.io/)]
-[[Code](https://github.com/xuhaoxh/infini-gram-mini)]
-[[Documentation](https://infini-gram-mini.readthedocs.io)]
-[[Contamination Bulletin](https://huggingface.co/spaces/infini-gram-mini/Benchmark-Contamination-Monitoring-System)]
 
 [**Infini-gram: Scaling Unbounded n-gram Language Models to a Trillion Tokens**](https://openreview.net/pdf?id=u2vAyMeLMm) \\
 **Jiacheng Liu**, Sewon Min, Luke Zettlemoyer, Yejin Choi, Hannaneh Hajishirzi \\
@@ -96,7 +98,7 @@ COLM 2024 (Oral Spotlight, 2%) \\
 [[Code](https://github.com/liujch1998/infini-gram)]
 [[Documentation](https://infini-gram.readthedocs.io)]
 
-[**Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback**](https://arxiv.org/pdf/2406.09279) \\
+[**Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback**](https://openreview.net/pdf?id=JMBWTlazjW) \\
 Hamish Ivison, Yizhong Wang, **Jiacheng Liu**, Zeqiu Wu, Valentina Pyatkin, Nathan Lambert, Noah A Smith, Yejin Choi, Hannaneh Hajishirzi \\
 NeurIPS 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2406.09279)]

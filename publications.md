@@ -7,9 +7,9 @@ title: "Publications"
 
 ## Peer-Reviewed Papers
 
-[**Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index**](https://arxiv.org/pdf/2506.12229) \\
+[**Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index**](https://aclanthology.org/2025.emnlp-main.1268.pdf) \\
 Hao Xu, **Jiacheng Liu**, Yejin Choi, Noah A. Smith, Hannaneh Hajishirzi \\
-EMNLP 2025 (Main Conference) \\
+EMNLP 2025 (Main Conference, **Best Paper Award**) \\
 [[Arxiv](https://arxiv.org/pdf/2506.12229)]
 [[Project Page](https://infini-gram-mini.io/)]
 [[Web Interface](https://huggingface.co/spaces/infini-gram-mini/infini-gram-mini)]
@@ -18,7 +18,7 @@ EMNLP 2025 (Main Conference) \\
 [[Documentation](https://infini-gram-mini.readthedocs.io)]
 [[Contamination Bulletin](https://huggingface.co/spaces/infini-gram-mini/Benchmark-Contamination-Monitoring-System)]
 
-[**OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens**](https://arxiv.org/pdf/2504.07096) \\
+[**OLMoTrace: Tracing Language Model Outputs Back to Trillions of Training Tokens**](https://aclanthology.org/2025.acl-demo.18.pdf) \\
 **Jiacheng Liu**, Taylor Blanton, Yanai Elazar, Sewon Min, YenSung Chen, Arnavi Chheda-Kothary, Huy Tran, Byron Bischoff, Eric Marsh, Michael Schmitz, Cassidy Trier, Aaron Sarnat, Jenna James, Jon Borchardt, Bailey Kuehl, Evie Cheng, Karen Farley, Sruthi Sreeram, Taira Anderson, David Albright, Carissa Schoenick, Luca Soldaini, Dirk Groeneveld, Rock Yuren Pang, Pang Wei Koh, Noah A. Smith, Sophie Lebrecht, Yejin Choi, Hannaneh Hajishirzi, Ali Farhadi, Jesse Dodge \\
 ACL 2025 System Demonstrations Track **(Best Demo Award)** \\
 [[Arxiv](https://arxiv.org/pdf/2504.07096)]
@@ -29,7 +29,7 @@ ACL 2025 System Demonstrations Track **(Best Demo Award)** \\
 [[Trailer Video](https://www.youtube.com/watch?v=A71RSAxjVqc)]
 [[Demo Video](https://www.youtube.com/watch?v=wyLRWza_v9M)]
 
-[**2 OLMo 2 Furious**](https://arxiv.org/pdf/2501.00656) \\
+[**2 OLMo 2 Furious**](https://openreview.net/pdf?id=2ezugTT9kU) \\
 Team OLMo, Pete Walsh, Luca Soldaini, Dirk Groeneveld, Kyle Lo, ..., **Jiacheng Liu**, ..., Ali Farhadi, Noah A. Smith, Hannaneh Hajishirzi \\
 COLM 2025 \\
 [[Arxiv](https://arxiv.org/pdf/2501.00656)]
@@ -37,7 +37,7 @@ COLM 2025 \\
 [[Code](https://github.com/allenai/OLMo)]
 [[Demo](https://playground.allenai.org)]
 
-[**Establishing Task Scaling Laws via Compute-Efficient Model Ladders**](https://arxiv.org/pdf/2412.04403) \\
+[**Establishing Task Scaling Laws via Compute-Efficient Model Ladders**](https://openreview.net/pdf?id=FeAM2RVO8l) \\
 Akshita Bhagia*, **Jiacheng Liu\***, Alexander Wettig, David Heineman, Oyvind Tafjord, Ananya Harsh Jha, Luca Soldaini, Noah A. Smith, Dirk Groeneveld, Pang Wei Koh, Jesse Dodge, Hannaneh Hajishirzi \\
 COLM 2025 \\
 [[Arxiv](https://arxiv.org/pdf/2412.04403)]
@@ -47,14 +47,14 @@ Marian Huot, Dianzhuo Wang, **Jiacheng Liu**, Eugene Shakhnovich \\
 PNAS \\
 [[Arxiv](https://www.biorxiv.org/content/biorxiv/early/2025/03/13/2025.03.12.642881.full.pdf)]
 
-[**AI as Humanity's Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text**](https://arxiv.org/pdf/2410.04265) \\
+[**AI as Humanity's Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text**](https://openreview.net/pdf?id=ilOEOIqolQ) \\
 Ximing Lu, Melanie Sclar, Skyler Hallinan, Niloofar Mireshghallah, **Jiacheng Liu**, Seungju Han, Allyson Ettinger, Liwei Jiang, Khyathi Chandu, Nouha Dziri, Yejin Choi \\
 ICLR 2025 (Oral) \\
 [[Arxiv](https://arxiv.org/pdf/2410.04265)]
 [[Code](https://github.com/GXimingLu/creativity_index)]
 [[Demo](https://huggingface.co/spaces/liujch1998/creativity)]
 
-[**Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback**](https://arxiv.org/pdf/2406.09279) \\
+[**Unpacking DPO and PPO: Disentangling Best Practices for Learning from Preference Feedback**](https://openreview.net/pdf?id=JMBWTlazjW) \\
 Hamish Ivison, Yizhong Wang, **Jiacheng Liu**, Zeqiu Wu, Valentina Pyatkin, Nathan Lambert, Noah A Smith, Yejin Choi, Hannaneh Hajishirzi \\
 NeurIPS 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2406.09279)]
