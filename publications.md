@@ -5,6 +5,12 @@ title: "Publications"
 
 ## Preprints
 
+[**Olmo 3**](https://www.datocms-assets.com/64837/1763662397-1763646865-olmo_3_technical_report-1.pdf) \\
+Olmo Team, ..., **Jiacheng Liu**, ..., Ashish Sabharwal, Luke Zettlemoyer, Pang Wei Koh, Ali Farhadi, Noah A. Smith, Hannaneh Hajishirzi \\
+[[Models/Datasets](https://huggingface.co/collections/allenai/olmo-3)]
+[[Code](https://github.com/allenai/OLMo-core)]
+[[Demo](https://playground.allenai.org)]
+
 ## Peer-Reviewed Papers
 
 [**Infini-gram mini: Exact n-gram Search at the Internet Scale with FM-Index**](https://aclanthology.org/2025.emnlp-main.1268.pdf) \\
@@ -33,7 +39,7 @@ ACL 2025 System Demonstrations Track **(Best Demo Award)** \\
 Team OLMo, Pete Walsh, Luca Soldaini, Dirk Groeneveld, Kyle Lo, ..., **Jiacheng Liu**, ..., Ali Farhadi, Noah A. Smith, Hannaneh Hajishirzi \\
 COLM 2025 \\
 [[Arxiv](https://arxiv.org/pdf/2501.00656)]
-[[Models/Datasets](https://huggingface.co/collections/allenai/olmo-2-674117b93ab84e98afc72edc)]
+[[Models/Datasets](https://huggingface.co/collections/allenai/olmo-2)]
 [[Code](https://github.com/allenai/OLMo)]
 [[Demo](https://playground.allenai.org)]
 
@@ -59,7 +65,7 @@ Hamish Ivison, Yizhong Wang, **Jiacheng Liu**, Zeqiu Wu, Valentina Pyatkin, Nath
 NeurIPS 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2406.09279)]
 [[Code](https://github.com/hamishivi/EasyLM)]
-[[Models](https://huggingface.co/collections/allenai/tulu-v25-suite-66676520fd578080e126f618)]
+[[Models](https://huggingface.co/collections/allenai/tulu-v25-suite)]
 
 [**Infini-gram: Scaling Unbounded n-gram Language Models to a Trillion Tokens**](https://openreview.net/pdf?id=u2vAyMeLMm) \\
 **Jiacheng Liu**, Sewon Min, Luke Zettlemoyer, Yejin Choi, Hannaneh Hajishirzi \\

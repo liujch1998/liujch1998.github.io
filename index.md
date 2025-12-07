@@ -103,7 +103,7 @@ Hamish Ivison, Yizhong Wang, **Jiacheng Liu**, Zeqiu Wu, Valentina Pyatkin, Nath
 NeurIPS 2024 \\
 [[Arxiv](https://arxiv.org/pdf/2406.09279)]
 [[Code](https://github.com/hamishivi/EasyLM)]
-[[Models](https://huggingface.co/collections/allenai/tulu-v25-suite-66676520fd578080e126f618)]
+[[Models](https://huggingface.co/collections/allenai/tulu-v25-suite)]
 
 [**Don't throw away your value model! Generating more preferable text with Value-Guided Monte-Carlo Tree Search decoding**](https://openreview.net/pdf?id=kh9Zt2Ldmn) \\
 **Jiacheng Liu**, Andrew Cohen, Ramakanth Pasunuru, Yejin Choi, Hannaneh Hajishirzi, Asli Celikyilmaz \\
